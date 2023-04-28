@@ -1,0 +1,143 @@
+*
+  box-sizing: border-box
+body
+  font-family: 'Roboto', sans-serif
+  background-color: #fff
+.container
+  max-width: 80%
+  margin: auto
+header
+  background-color: #fff
+.header-top
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 14px 0px
+  &__right
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 552px
+.logo
+  display: block
+  width: 164px
+  height: auto
+  // width: 177px
+  // height: 79px
+  transition: transform 0.5s
+  &:hover
+    transform: scale(1.1)
+  & img
+    max-width: 100%
+    height: auto
+.search
+  display: flex
+  position: relative
+  overflow: hidden
+  border-radius: 6px
+  height: 46px
+  max-width: 350px
+  &__input
+    width: 350px
+    height: 46px
+    padding-left: 23px
+    padding-right: 75px
+    background-color: #F1F1F1
+    border: none
+    font-size: 14px
+    line-height: 15px
+    font-weight: 400
+    color: #3A3A3A
+    outline: none
+    &::placeholder
+      color: #3A3A3A
+      opacity: 0.6
+  &__button
+    position: absolute
+    cursor: pointer
+    width: 65px
+    height: 100%
+    top: 0
+    right: 0
+    border: none
+    background-color: #4F68EC
+    cursor: pointer
+    &:hover
+      background-color: $secondary
+      outline-offset: -3px
+      outline: 1px solid #fff
+      border-radius: 0 6px 6px 0
+.signin-btn
+  padding: 12px 38px
+  font-weight: 400
+  font-size: 16px
+  line-height: 22px
+  text-align: center
+  color: #FFFFFF
+  background-color: #4F68EC
+  border: none
+  border-radius: 6px
+  cursor: pointer
+  &:hover
+    background-color: $secondary
+    outline-offset: -3px
+    outline: 1px solid #fff
+.header-bottom
+  color: #fff
+  background-color: $secondary
+.categories-list
+  font-size: 16px
+  text-transform: uppercase
+  list-style-type: none
+  letter-spacing: 3px
+  margin: 0
+  padding: 30px 0
+  display: flex
+  align-items: center
+  justify-content: space-between
+  & li
+    cursor: pointer
+    &:hover
+      color: $accent
+.footer
+  background-color: $secondary
+  color: #fff
+  font-weight: 400
+  font-size: 14px
+  padding: 20px 0px
+  & p
+    margin: 0
+.header-mobile, .burder-btn-hide
+  display: none
+.header-menu-active
+  display: block
+.burger-btn
+  // display: flex
+  display: none
+  align-items: center
+  justify-content: space-between
+  flex-direction: column
+  border: none
+  background-color: #fff
+  cursor: pointer
+  width: 30px
+  height: 18px
+  padding: 0
+  &__line
+    width: 30px
+    height: 2px
+    background-color: $accent
+.burger-btn span
+  transition: all 0.3s ease
+.btn-clicked
+  position: relative
+.btn-clicked > span:nth-of-type(1)
+  position: absolute
+  transform: rotate(45deg)
+  top: 8px
+.btn-clicked > span:nth-of-type(2)
+  display: none
+.btn-clicked > span:nth-of-type(3)
+  position: absolute
+  transform: rotate(-45deg)
+  top: 8px
