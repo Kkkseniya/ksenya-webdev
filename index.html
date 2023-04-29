@@ -136,7 +136,37 @@
     </div>
   </section>
 
+  <div class="modal">
+    <div class="modal__overlay"></div>
+    <!-- /.modal__overlay -->
+    <div class="modal__dialog">
+      <a href="#" class="modal__close">
+        <img src="img/close.svg" alt="icon: close">
+      </a>
+      <h3 class="modal__title modal__title--mb-mess">Вход в аккаунт</h3>
+
+      <form action="#" method="post" class="modal__form form">
+        <input type="email" class="input modal__input" placeholder="Email*" name="modalEmail" required>
+        <input type="password" class="password modal__password" placeholder="Пароль*" name="modalPass" minlength="5"
+          maxlength="20" required>
+        <div class="modal__footer">
+          <span class="modal__info">* Обязательные поля</span>
+          <div class="modal__form-wrapper">
+            <button class="button-login modal__button" type="submit">Войти</button>
+            <button class="button-reg modal__button" type="submit">Зарегистрировать</button>
+          </div>
+        </div>
+
+
+      </form>
+    </div>
+    <!-- /.modal__dialog -->
+  </div>
+  <!-- /.modal -->
+
   <script src="js/jquery-3.6.4.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+
   <script src="js/aos.js"></script>
   <script src="js/main.js"></script>
 </body>

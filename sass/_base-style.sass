@@ -141,3 +141,102 @@ header
   position: absolute
   transform: rotate(-45deg)
   top: 8px
+.modal
+  &__overlay
+    position: fixed
+    left: 0
+    top: 0
+    bottom: 0
+    right: 0
+    background-color: #F1F1F1
+    z-index: 100
+    visibility: hidden
+    opacity: 0
+    transition: opacity 0.2s
+    &--visible
+      visibility: visible
+      opacity: 0.6
+  &__dialog
+    position: fixed
+    top: 50%
+    left: 50%
+    max-width: 540px
+    padding: 33px 88px
+    background-color: $secondary
+    transform: translate(-50%, -50%)
+    color: #fff
+    border-radius: 8px
+    z-index: 101
+    visibility: hidden
+    transition: opacity 0.2s
+    max-height: 94%
+    &--visible
+      visibility: visible
+      opacity: 1
+      overflow-y: auto
+  &__close
+    position: absolute
+    right: 18px
+    top: 17px
+    text-decoration: none
+    cursor: pointer
+    & img
+      height: 16px
+      width: 16px
+  &__title
+    font-style: normal
+    font-weight: bold
+    font-size: 18px
+    line-height: 23px
+    margin-top: 0
+    margin-bottom: 0
+    text-transform: uppercase
+    letter-spacing: 1px
+    text-align: center
+  &__input, &__password
+    width: 100%
+    margin-top: 15px
+    font-weight: 400
+    font-size: 14px
+    height: 50px
+    padding: 0px 12px
+    outline: none
+    border-radius: 6px
+  &__info
+    font-style: normal
+    font-weight: 500
+    font-size: 14px
+    color: $red-color
+    margin-top: 20px
+  &__button
+    width: 165px
+    padding: 12px 0px
+    font-weight: 400
+    font-size: 16px
+    line-height: 22px
+    text-align: center
+    color: #FFFFFF
+    background-color: $accent
+    border: 1px solid #fff
+    border-radius: 6px
+    cursor: pointer
+  &:hover
+    background-color: $secondary
+  &__footer
+    width: 100%
+    margin-top: 15px
+  &__form
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-wrap: wrap
+    margin-top: 26px
+    &-wrapper
+      display: flex
+      width: 100%
+      justify-content: space-between
+      align-items: center
+      margin-top: 35px
+.invalid-modal
+  font-weight: 400
+  color: $red-color
