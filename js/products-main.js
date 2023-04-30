@@ -6,6 +6,17 @@ $(document).ready(function () {
   //для вывода по хэштегам
   const hashList = document.querySelector(".hash-list-section");
   const categoriesTitle = document.querySelector(".categories__title");
+  const hashListHeader = document.querySelector(".hash-list-header");
+
+  hashListHeader.addEventListener("click", (e) => {
+    let elem = e.target;
+    if (elem.closest(".hash-list__item")) {
+      categoriesBlock.style.display = "none";
+      categoriesArticles.style.display = "grid";
+
+      getData(elem.textContent.toLowerCase());
+    }
+  });
 
   hashList.addEventListener("click", (e) => {
     let elem = e.target;

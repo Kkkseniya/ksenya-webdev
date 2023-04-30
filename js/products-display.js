@@ -3,7 +3,15 @@ $(document).ready(function () {
 
   //для вывода по хэштегам
   const hashList = document.querySelector(".hash-list-section");
+  const hashListHeader = document.querySelector(".hash-list-header");
   const articlesTitle = document.querySelector(".articles__title");
+
+  hashListHeader.addEventListener("click", (e) => {
+    let elem = e.target;
+    if (elem.closest(".hash-list__item")) {
+      getData("hash", elem.textContent.toLowerCase());
+    }
+  });
 
   hashList.addEventListener("click", (e) => {
     let elem = e.target;
