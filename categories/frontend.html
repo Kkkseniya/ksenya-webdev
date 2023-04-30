@@ -16,250 +16,104 @@
 </head>
 
 <body>
-  <header class="header-fixed">
-    <div class="container">
-      <div class="header-top">
-        <a href="../index.html" class="logo"><img src="../img/blog-logo.svg" alt="Logo"></a>
+  <div class="main-wrapper">
+    <header class="header-fixed">
+      <div class="container">
+        <div class="header-top">
+          <a href="../index.html" class="logo"><img src="../img/blog-logo.svg" alt="Logo"></a>
 
-        <div class="header-top__right">
-          <form action="#" class="search mobile-none">
+          <div class="header-top__right">
+            <form action="#" class="search mobile-none">
+              <input type="text" class="search__input" placeholder="Найти" />
+              <button class="search__button">
+                <img src="../img/search.svg" alt="Icon: search" />
+              </button>
+            </form>
+            <button class="signin-btn">Войти</button>
+
+            <button class="burger-btn">
+              <span class="burger-btn__line"></span>
+              <span class="burger-btn__line"></span>
+              <span class="burger-btn__line"></span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="header-bottom">
+        <div class="container">
+          <ul class="categories-list">
+            <li><a href="/categories/frontend.html">frontend</a></li>
+            <li><a href="/categories/backend.html">backend</a></li>
+            <li><a href="/categories/analytics.html">аналитика</a></li>
+            <li><a href="/categories/interviews.html">собеседования</a></li>
+            <li><a href="/categories/portfolio.html">портфолио</a></li>
+            <li><a href="/categories/contacts.html">контакты</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="header-mobile">
+        <div class="container">
+          <ul class="categories-list">
+            <li><a href="/categories/frontend.html">frontend</a></li>
+            <li><a href="/categories/backend.html">backend</a></li>
+            <li><a href="/categories/analytics.html">аналитика</a></li>
+            <li><a href="/categories/interviews.html">собеседования</a></li>
+            <li><a href="/categories/portfolio.html">портфолио</a></li>
+            <li><a href="/categories/contacts.html">контакты</a></li>
+          </ul>
+
+          <form action="#" class="search">
             <input type="text" class="search__input" placeholder="Найти" />
             <button class="search__button">
               <img src="../img/search.svg" alt="Icon: search" />
             </button>
           </form>
-          <button class="signin-btn">Войти</button>
 
-          <button class="burger-btn">
-            <span class="burger-btn__line"></span>
-            <span class="burger-btn__line"></span>
-            <span class="burger-btn__line"></span>
-          </button>
+          <ul class="hash-list hash-list-header">
+            <li class="hash-list__item">HTML</li>
+            <li class="hash-list__item">CSS</li>
+            <li class="hash-list__item">JavaScript</li>
+            <li class="hash-list__item">WordPress</li>
+            <li class="hash-list__item">PHP</li>
+            <li class="hash-list__item">Bootstrap</li>
+          </ul>
+
         </div>
-
       </div>
-    </div>
+    </header>
 
-    <div class="header-bottom">
+    <section class="articles">
       <div class="container">
-        <ul class="categories-list">
-          <li><a href="/categories/frontend.html">frontend</a></li>
-          <li><a href="/categories/backend.html">backend</a></li>
-          <li><a href="/categories/analytics.html">аналитика</a></li>
-          <li><a href="/categories/interviews.html">собеседования</a></li>
-          <li><a href="/categories/portfolio.html">портфолио</a></li>
-          <li><a href="/categories/contacts.html">контакты</a></li>
-        </ul>
-      </div>
-    </div>
+        <div class="list-container">
+          <ul class="hash-list mobile-none hash-list-section">
+            <li class="hash-list__item">HTML</li>
+            <li class="hash-list__item">CSS</li>
+            <li class="hash-list__item">JavaScript</li>
+            <li class="hash-list__item">WordPress</li>
+            <li class="hash-list__item">PHP</li>
+            <li class="hash-list__item">Bootstrap</li>
+          </ul>
+        </div>
 
-    <div class="header-mobile">
+        <h1 class="articles__title">Frontend</h1>
+
+        <div class="articles__box">
+        </div>
+
+      </div>
+    </section>
+
+    <section class="footer">
       <div class="container">
-        <ul class="categories-list">
-          <li><a href="/categories/frontend.html">frontend</a></li>
-          <li><a href="/categories/backend.html">backend</a></li>
-          <li><a href="/categories/analytics.html">аналитика</a></li>
-          <li><a href="/categories/interviews.html">собеседования</a></li>
-          <li><a href="/categories/portfolio.html">портфолио</a></li>
-          <li><a href="/categories/contacts.html">контакты</a></li>
-        </ul>
-
-        <form action="#" class="search">
-          <input type="text" class="search__input" placeholder="Найти" />
-          <button class="search__button">
-            <img src="../img/search.svg" alt="Icon: search" />
-          </button>
-        </form>
-
-        <ul class="hash-list">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>WordPress</li>
-          <li>PHP</li>
-          <li>Bootstrap</li>
-        </ul>
-
+        <p>© 2023 - Kryzhanivskaya Kseniya</p>
       </div>
-    </div>
-  </header>
+    </section>
 
-  <section class="articles">
-    <div class="container">
-      <div class="list-container">
-        <ul class="hash-list mobile-none">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>WordPress</li>
-          <li>PHP</li>
-          <li>Bootstrap</li>
-        </ul>
-      </div>
+  </div>
 
-      <h1 class="articles__title">Frontend</h1>
-
-      <div class="articles__box">
-
-        <div class="articles__card">
-          <!-- <a href="#" class="toarticle"></a> -->
-          <div class="card-top">
-            <img class="card-top__img" src="../img/articles-bootstrap.PNG">
-            <p class="card-top__hash">Bootstrap</p>
-          </div>
-
-          <div class="card-bottom">
-            <span class="card-bottom__date">21.04.2023</span>
-            <h2 class="card-bottom__title">Аккордеон на bootstrap</h2>
-            <p class="card-bottom__description">В этой статье хочу рассказать об аккордеонах - списках с элементами,
-              каждое из которых имеет раскрывающееся описание.</p>
-          </div>
-        </div>
-
-        <div class="articles__card">
-          <!-- <a href="#" class="toarticle"></a> -->
-          <div class="card-top">
-            <img class="card-top__img" src="../img/articles-bootstrap.PNG">
-            <p class="card-top__hash">Bootstrap</p>
-          </div>
-
-          <div class="card-bottom">
-            <span class="card-bottom__date">21.04.2023</span>
-            <h2 class="card-bottom__title">Аккордеон на bootstrap</h2>
-            <p class="card-bottom__description">В этой статье хочу рассказать об аккордеонах - списках с элементами,
-              каждое из которых имеет раскрывающееся описание.</p>
-          </div>
-        </div>
-
-        <div class="articles__card">
-          <!-- <a href="#" class="toarticle"></a> -->
-          <div class="card-top">
-            <img class="card-top__img" src="../img/articles-bootstrap.PNG">
-            <p class="card-top__hash">Bootstrap</p>
-          </div>
-
-          <div class="card-bottom">
-            <span class="card-bottom__date">21.04.2023</span>
-            <h2 class="card-bottom__title">Аккордеон на bootstrap</h2>
-            <p class="card-bottom__description">В этой статье хочу рассказать об аккордеонах - списках с элементами,
-              каждое из которых имеет раскрывающееся описание.</p>
-          </div>
-        </div>
-
-        <div class="articles__card">
-          <!-- <a href="#" class="toarticle"></a> -->
-          <div class="card-top">
-            <img class="card-top__img" src="../img/articles-bootstrap.PNG">
-            <p class="card-top__hash">Bootstrap</p>
-          </div>
-
-          <div class="card-bottom">
-            <span class="card-bottom__date">21.04.2023</span>
-            <h2 class="card-bottom__title">Аккордеон на bootstrap</h2>
-            <p class="card-bottom__description">В этой статье хочу рассказать об аккордеонах - списках с элементами,
-              каждое из которых имеет раскрывающееся описание.</p>
-          </div>
-        </div>
-
-        <div class="articles__card">
-          <!-- <a href="#" class="toarticle"></a> -->
-          <div class="card-top">
-            <img class="card-top__img" src="../img/articles-bootstrap.PNG">
-            <p class="card-top__hash">Bootstrap</p>
-          </div>
-
-          <div class="card-bottom">
-            <span class="card-bottom__date">21.04.2023</span>
-            <h2 class="card-bottom__title">Аккордеон на bootstrap</h2>
-            <p class="card-bottom__description">В этой статье хочу рассказать об аккордеонах - списках с элементами,
-              каждое из которых имеет раскрывающееся описание.</p>
-          </div>
-        </div>
-
-        <div class="articles__card">
-          <!-- <a href="#" class="toarticle"></a> -->
-          <div class="card-top">
-            <img class="card-top__img" src="../img/articles-bootstrap.PNG">
-            <p class="card-top__hash">Bootstrap</p>
-          </div>
-
-          <div class="card-bottom">
-            <span class="card-bottom__date">21.04.2023</span>
-            <h2 class="card-bottom__title">Аккордеон на bootstrap</h2>
-            <p class="card-bottom__description">В этой статье хочу рассказать об аккордеонах - списках с элементами,
-              каждое из которых имеет раскрывающееся описание.</p>
-          </div>
-        </div>
-
-        <div class="articles__card">
-          <!-- <a href="#" class="toarticle"></a> -->
-          <div class="card-top">
-            <img class="card-top__img" src="../img/articles-bootstrap.PNG">
-            <p class="card-top__hash">Bootstrap</p>
-          </div>
-
-          <div class="card-bottom">
-            <span class="card-bottom__date">21.04.2023</span>
-            <h2 class="card-bottom__title">Аккордеон на bootstrap</h2>
-            <p class="card-bottom__description">В этой статье хочу рассказать об аккордеонах - списках с элементами,
-              каждое из которых имеет раскрывающееся описание.</p>
-          </div>
-        </div>
-
-        <div class="articles__card">
-          <!-- <a href="#" class="toarticle"></a> -->
-          <div class="card-top">
-            <img class="card-top__img" src="../img/articles-bootstrap.PNG">
-            <p class="card-top__hash">Bootstrap</p>
-          </div>
-
-          <div class="card-bottom">
-            <span class="card-bottom__date">21.04.2023</span>
-            <h2 class="card-bottom__title">Аккордеон на bootstrap</h2>
-            <p class="card-bottom__description">В этой статье хочу рассказать об аккордеонах - списках с элементами,
-              каждое из которых имеет раскрывающееся описание.</p>
-          </div>
-        </div>
-
-        <div class="articles__card">
-          <!-- <a href="#" class="toarticle"></a> -->
-          <div class="card-top">
-            <img class="card-top__img" src="../img/articles-bootstrap.PNG">
-            <p class="card-top__hash">Bootstrap</p>
-          </div>
-
-          <div class="card-bottom">
-            <span class="card-bottom__date">21.04.2023</span>
-            <h2 class="card-bottom__title">Аккордеон на bootstrap</h2>
-            <p class="card-bottom__description">В этой статье хочу рассказать об аккордеонах - списках с элементами,
-              каждое из которых имеет раскрывающееся описание.</p>
-          </div>
-        </div>
-
-        <div class="articles__card">
-          <!-- <a href="#" class="toarticle"></a> -->
-          <div class="card-top">
-            <img class="card-top__img" src="../img/articles-bootstrap.PNG">
-            <p class="card-top__hash">Bootstrap</p>
-          </div>
-
-          <div class="card-bottom">
-            <span class="card-bottom__date">21.04.2023</span>
-            <h2 class="card-bottom__title">Аккордеон на bootstrap</h2>
-            <p class="card-bottom__description">В этой статье хочу рассказать об аккордеонах - списках с элементами,
-              каждое из которых имеет раскрывающееся описание.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="footer">
-    <div class="container">
-      <p>© 2023 - Kryzhanivskaya Kseniya</p>
-    </div>
-  </section>
 
   <div class="modal">
     <div class="modal__overlay"></div>
@@ -273,7 +127,7 @@
       <form action="#" method="post" class="modal__form form">
         <input type="email" class="input modal__input" placeholder="Email*" name="modalEmail" required>
         <input type="password" class="password modal__password" placeholder="Пароль*" name="modalPass" minlength="5"
-          maxlength="20" required>
+          maxlength="20" autocomplete="on" required>
         <div class="modal__footer">
           <span class="modal__info">* Обязательные поля</span>
           <div class="modal__form-wrapper">
@@ -281,8 +135,6 @@
             <button class="button-reg modal__button" type="submit">Зарегистрировать</button>
           </div>
         </div>
-
-
       </form>
     </div>
     <!-- /.modal__dialog -->
@@ -295,6 +147,7 @@
   <script src="../js/jquery.validate.min.js"></script>
 
   <script src="../js/aos.js"></script>
+  <script src="/js/products-display.js"></script>
   <script src="../js/main.js"></script>
 </body>
 

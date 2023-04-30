@@ -16,128 +16,134 @@
 </head>
 
 <body>
-  <header class="header-fixed">
-    <div class="container">
-      <div class="header-top">
-        <a href="/index.html" class="logo"><img src="./img/blog-logo.svg" alt="Logo"></a>
+  <div class="main-wrapper">
 
-        <div class="header-top__right">
-          <form action="#" class="search mobile-none">
+    <header class="header-fixed">
+      <div class="container">
+        <div class="header-top">
+          <a href="/index.html" class="logo"><img src="./img/blog-logo.svg" alt="Logo"></a>
+
+          <div class="header-top__right">
+            <form action="#" class="search mobile-none">
+              <input type="text" class="search__input" placeholder="Найти" />
+              <button class="search__button">
+                <img src="img/search.svg" alt="Icon: search" />
+              </button>
+            </form>
+            <button class="signin-btn">Войти</button>
+
+            <button class="burger-btn">
+              <span class="burger-btn__line"></span>
+              <span class="burger-btn__line"></span>
+              <span class="burger-btn__line"></span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="header-bottom">
+        <div class="container">
+          <ul class="categories-list">
+            <li><a href="/categories/frontend.html">frontend</a></li>
+            <li><a href="/categories/backend.html">backend</a></li>
+            <li><a href="/categories/analytics.html">аналитика</a></li>
+            <li><a href="/categories/interviews.html">собеседования</a></li>
+            <li><a href="/categories/portfolio.html">портфолио</a></li>
+            <li><a href="/categories/contacts.html">контакты</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="header-mobile">
+        <div class="container">
+          <ul class="categories-list">
+            <li><a href="/categories/frontend.html">frontend</a></li>
+            <li><a href="/categories/backend.html">backend</a></li>
+            <li><a href="/categories/analytics.html">аналитика</a></li>
+            <li><a href="/categories/interviews.html">собеседования</a></li>
+            <li><a href="/categories/portfolio.html">портфолио</a></li>
+            <li><a href="/categories/contacts.html">контакты</a></li>
+          </ul>
+
+          <form action="#" class="search">
             <input type="text" class="search__input" placeholder="Найти" />
             <button class="search__button">
               <img src="img/search.svg" alt="Icon: search" />
             </button>
           </form>
-          <button class="signin-btn">Войти</button>
 
-          <button class="burger-btn">
-            <span class="burger-btn__line"></span>
-            <span class="burger-btn__line"></span>
-            <span class="burger-btn__line"></span>
-          </button>
+          <ul class="hash-list">
+            <li class="hash-list__item">HTML</li>
+            <li class="hash-list__item">CSS</li>
+            <li class="hash-list__item">JavaScript</li>
+            <li class="hash-list__item">WordPress</li>
+            <li class="hash-list__item">PHP</li>
+            <li class="hash-list__item">Bootstrap</li>
+          </ul>
+
         </div>
-
       </div>
-    </div>
+    </header>
 
-    <div class="header-bottom">
+    <section class="categories">
       <div class="container">
-        <ul class="categories-list">
-          <li><a href="/categories/frontend.html">frontend</a></li>
-          <li><a href="/categories/backend.html">backend</a></li>
-          <li><a href="/categories/analytics.html">аналитика</a></li>
-          <li><a href="/categories/interviews.html">собеседования</a></li>
-          <li><a href="/categories/portfolio.html">портфолио</a></li>
-          <li><a href="/categories/contacts.html">контакты</a></li>
-        </ul>
-      </div>
-    </div>
+        <div class="list-container">
+          <ul class="hash-list mobile-none hash-list-section">
+            <li class="hash-list__item">HTML</li>
+            <li class="hash-list__item">CSS</li>
+            <li class="hash-list__item">JavaScript</li>
+            <li class="hash-list__item">WordPress</li>
+            <li class="hash-list__item">PHP</li>
+            <li class="hash-list__item">Bootstrap</li>
+          </ul>
+        </div>
+        <h1 class="categories__title">Категории</h1>
 
-    <div class="header-mobile">
+        <div class="categories-articles"></div>
+
+        <div class="categories__block">
+          <div class="categories__card">
+            <a href="/categories/frontend.html" class="card-link"></a>
+            <img class="categories__img" src="./img/categories-frontend.PNG" alt="frontend image">
+            <h2 class="card-title">frontend</h2>
+          </div>
+          <div class="categories__card">
+            <a href="/categories/backend.html" class="card-link"></a>
+            <img class="categories__img" src="./img/categories-backend.PNG" alt="backend image">
+            <h2 class="card-title">backend</h2>
+          </div>
+          <div class="categories__card">
+            <a href="/categories/analytics.html" class="card-link"></a>
+            <img class="categories__img" src="./img/categories-analytics.PNG" alt="analytics image">
+            <h2 class="card-title">Аналитика</h2>
+          </div>
+          <div class="categories__card">
+            <a href="/categories/interviews.html" class="card-link"></a>
+            <img class="categories__img" src="./img/categories-interview.PNG" alt="interview image">
+            <h2 class="card-title">Собеседования</h2>
+          </div>
+          <div class="categories__card">
+            <a href="/categories/portfolio.html" class="card-link"></a>
+            <img class="categories__img" src="./img/categories-portfolio.jpg" alt="portfolio image">
+            <h2 class="card-title">Портфолио</h2>
+          </div>
+          <div class="categories__card">
+            <a href="/categories/contacts.html" class="card-link"></a>
+            <img class="categories__img" src="./img/categories-contacts.jpg" alt="contacts image">
+            <h2 class="card-title">Контакты</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
       <div class="container">
-        <ul class="categories-list">
-          <li><a href="/categories/frontend.html">frontend</a></li>
-          <li><a href="/categories/backend.html">backend</a></li>
-          <li><a href="/categories/analytics.html">аналитика</a></li>
-          <li><a href="/categories/interviews.html">собеседования</a></li>
-          <li><a href="/categories/portfolio.html">портфолио</a></li>
-          <li><a href="/categories/contacts.html">контакты</a></li>
-        </ul>
-
-        <form action="#" class="search">
-          <input type="text" class="search__input" placeholder="Найти" />
-          <button class="search__button">
-            <img src="img/search.svg" alt="Icon: search" />
-          </button>
-        </form>
-
-        <ul class="hash-list">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>WordPress</li>
-          <li>PHP</li>
-          <li>Bootstrap</li>
-        </ul>
-
+        <p>© 2023 - Kryzhanivskaya Kseniya</p>
       </div>
-    </div>
-  </header>
+    </section>
 
-  <section class="categories">
-    <div class="container">
-      <div class="list-container">
-        <ul class="hash-list mobile-none">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>WordPress</li>
-          <li>PHP</li>
-          <li>Bootstrap</li>
-        </ul>
-      </div>
-      <h1 class="categories__title">Категории</h1>
-      <div class="categories__block">
-        <div class="categories__card">
-          <a href="#" class="card-link"></a>
-          <img class="categories__img" src="./img/categories-frontend.PNG" alt="frontend image">
-          <h2 class="card-title">frontend</h2>
-        </div>
-        <div class="categories__card">
-          <a href="#" class="card-link"></a>
-          <img class="categories__img" src="./img/categories-backend.PNG" alt="backend image">
-          <h2 class="card-title">backend</h2>
-        </div>
-        <div class="categories__card">
-          <a href="#" class="card-link"></a>
-          <img class="categories__img" src="./img/categories-analytics.PNG" alt="analytics image">
-          <h2 class="card-title">Аналитика</h2>
-        </div>
-        <div class="categories__card">
-          <a href="#" class="card-link"></a>
-          <img class="categories__img" src="./img/categories-interview.PNG" alt="interview image">
-          <h2 class="card-title">Собеседования</h2>
-        </div>
-        <div class="categories__card">
-          <a href="#" class="card-link"></a>
-          <img class="categories__img" src="./img/categories-portfolio.jpg" alt="portfolio image">
-          <h2 class="card-title">Портфолио</h2>
-        </div>
-        <div class="categories__card">
-          <a href="#" class="card-link"></a>
-          <img class="categories__img" src="./img/categories-contacts.jpg" alt="contacts image">
-          <h2 class="card-title">Контакты</h2>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="footer">
-    <div class="container">
-      <p>© 2023 - Kryzhanivskaya Kseniya</p>
-    </div>
-  </section>
-
+  </div>
   <div class="modal">
     <div class="modal__overlay"></div>
     <!-- /.modal__overlay -->
@@ -170,6 +176,8 @@
   <script src="js/jquery.validate.min.js"></script>
 
   <script src="js/aos.js"></script>
+  <script src="/js/products-main.js"></script>
+  <!-- <script src="/js/products-display.js"></script> -->
   <script src="js/main.js"></script>
 </body>
 
