@@ -63,8 +63,34 @@ $(document).ready(function () {
       },
     });
   });
+
+  //Arrow scroll
+  const upBtn = document.querySelector(".button-up");
+
+  const show = () => {
+    upBtn.classList.remove("button-up--hide");
+  };
+
+  const hide = () => {
+    upBtn.classList.add("button-up--hide");
+  };
+
+  window.addEventListener("scroll", () => {
+    // определяем величину прокрутки
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    // если страница прокручена больше чем на 400px, то делаем кнопку видимой, иначе скрываем
+    scrollY > 400 ? show() : hide();
+  });
+
+  upBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  });
+
   //Анимация
   // AOS.init();
-
-  //Убрать ховеры и анимации на меленьких экранах
 });
