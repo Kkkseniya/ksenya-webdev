@@ -1,10 +1,14 @@
 $(document).ready(function () {
+  var currentPosts = [];
   const cardsBox = document.querySelector(".articles__box");
 
   //для вывода по хэштегам
   const hashList = document.querySelector(".hash-list-section");
   const hashListHeader = document.querySelector(".hash-list-header");
   const articlesTitle = document.querySelector(".articles__title");
+
+  //для пагинации
+  const pagination = document.querySelector(".articles__pagination");
 
   hashListHeader.addEventListener("click", (e) => {
     let elem = e.target;
@@ -20,6 +24,17 @@ $(document).ready(function () {
       // getData(elem.textContent.toLowerCase);
     }
   });
+
+  //функция рендера пагинации
+  const renderPagination = (pageCount) => {
+    pagination.innerHTML = "";
+    for (let i = 0; i < pageCount; i++) {
+      const listItem = document.createElement("li");
+      listItem.classList.add("articles__page");
+      listItem.innerText = i + 1;
+      pagination.append(listItem);
+    }
+  };
 
   //для отрисовки карточек
   const renderCards = (array) => {
@@ -45,7 +60,19 @@ $(document).ready(function () {
     });
   };
 
-  // const getDataFront = (type) => {};
+  //слушатель на клик по пагинации
+  pagination.addEventListener("click", (e) => {
+    if (e.target.closest(".articles__page")) {
+      const currentPage = +e.target.textContent; //записываем как число
+
+      const postPerPage = 6; //вывожу по 6 шт
+
+      let start = (currentPage - 1) * postPerPage; //как получить currentPage??? в эту функцию
+      let end = start + postPerPage;
+      let postPortion = currentPosts.slice(start, end);
+      renderCards(postPortion);
+    }
+  });
 
   const getData = (opt, value) => {
     fetch("../db/db.json")
@@ -72,9 +99,18 @@ $(document).ready(function () {
             articlesTitle.textContent = value.toUpperCase();
           }
           articlesTitle.classList.remove("categories__title--mess");
-          renderCards(forRender);
+
+          const postPerPage = 6; //вывожу по 6 шт
+          const allPages = Math.ceil(forRender.length / postPerPage);
+          renderPagination(allPages);
+
+          currentPosts = forRender;
+          //определяю откуда по куда выводить статьи, выводим только первую порцию
+          let postPortion = forRender.slice(0, postPerPage);
+          renderCards(postPortion);
         } else {
           cardsBox.innerHTML = "";
+          pagination.innerHTML = "";
           if (opt === "type") {
             articlesTitle.textContent = "В данном разделе пока нет статей";
             articlesTitle.classList.add("categories__title--mess");
