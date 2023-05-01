@@ -94,7 +94,17 @@ $(document).ready(function () {
 
         if (forRender.length > 0) {
           if (opt === "type") {
-            articlesTitle.textContent = value[0].toUpperCase() + value.slice(1);
+            switch (value) {
+              case "analytics":
+                articlesTitle.textContent = "Аналитика";
+                break;
+              case "interviews":
+                articlesTitle.textContent = "Собеседования";
+                break;
+              default:
+                articlesTitle.textContent = value[0].toUpperCase() + value.slice(1);
+                break;
+            }
           } else {
             articlesTitle.textContent = value.toUpperCase();
           }
@@ -127,9 +137,8 @@ $(document).ready(function () {
   // getData(opt, value);
 
   const currentUrl = window.location.pathname;
-  if (currentUrl.includes("frontend")) {
-    getData("type", "frontend");
-  } else {
-    getData("type", "backend");
-  }
+  const lastPartUrl = currentUrl.split("/").pop();
+  const postType = lastPartUrl.substring(0, lastPartUrl.length - 5);
+
+  getData("type", postType);
 });
