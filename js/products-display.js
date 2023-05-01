@@ -60,9 +60,7 @@ $(document).ready(function () {
 
         let forRender = [];
         if (opt === "type") {
-          console.log("front");
           forRender = array.filter((item) => item.type === value);
-          console.log(forRender);
         } else {
           forRender = array.filter((item) => item.hash.includes(value));
         }
