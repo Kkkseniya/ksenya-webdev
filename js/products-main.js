@@ -1,8 +1,16 @@
 $(document).ready(function () {
   var currentPosts = [];
   // const cardsBox = document.querySelector(".articles__box"); //categories-articles
-  const categoriesArticles = document.querySelector(".categories-articles");
-  const categoriesBlock = document.querySelector(".categories__block");
+  const categoriesArticles = document.querySelector(".categories-articles"); //это для вывода блока для хэшей
+  const categoriesBlock = document.querySelector(".categories__block"); //это блок который всегда на этой странице
+  //вместо categories__block на странице портфолио portfolio-block
+
+  //для страницы портфолио открытие по кнопке
+  const portfolioBtns = document.querySelectorAll(".portfolio__btn");
+  const fullDescriptions = document.querySelectorAll(".portfolio__full-description");
+  const contentWrappers = document.querySelectorAll(".content-wrapper");
+  const portfolioImgs = document.querySelectorAll(".portfolio-btn-img");
+  const portfolioTexts = document.querySelectorAll(".portfolio-btn-text");
 
   //для вывода по хэштегам
   const hashList = document.querySelector(".hash-list-section");
@@ -15,6 +23,7 @@ $(document).ready(function () {
 
   //функция рендера пагинации
   const renderPagination = (pageCount) => {
+    pagination.style.display = "flex"; //
     pagination.innerHTML = "";
     for (let i = 0; i < pageCount; i++) {
       const listItem = document.createElement("li");
@@ -23,6 +32,24 @@ $(document).ready(function () {
       pagination.append(listItem);
     }
   };
+
+  // const portfolioBtnText = portfolioBtn.querySelector("p");
+
+  //кнопка на странице портфолио, которая разворачивает/сворачивает описание
+  portfolioBtns.forEach((item, index) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      contentWrappers[index].classList.toggle("position-start");
+      fullDescriptions[index].classList.toggle("hide-class");
+      portfolioImgs[index].classList.toggle("image-rotate");
+      if (fullDescriptions[index].classList.contains("hide-class")) {
+        portfolioTexts[index].textContent = "Подробнее";
+      } else {
+        portfolioTexts[index].textContent = "Скрыть";
+      }
+    });
+  });
 
   //слушатель на клик по пагинации
   pagination.addEventListener("click", (e) => {
@@ -85,6 +112,7 @@ $(document).ready(function () {
     array.forEach((item) => {
       const card = document.createElement("div");
       card.classList.add("articles__card");
+      card.setAttribute("data-id", item.id); //записала id в атрибут
       card.innerHTML = `      
           <a href="/categories/article.html" class="toarticle"></a>
           <div class="card-top">
@@ -139,4 +167,7 @@ $(document).ready(function () {
   };
 
   getData();
+
+  const currentUrl = window.location.pathname;
+  // console.log(currentUrl.includes("portfolio"));
 });

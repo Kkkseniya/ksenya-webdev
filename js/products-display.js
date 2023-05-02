@@ -27,6 +27,7 @@ $(document).ready(function () {
 
   //функция рендера пагинации
   const renderPagination = (pageCount) => {
+    pagination.style.display = "flex"; //
     pagination.innerHTML = "";
     for (let i = 0; i < pageCount; i++) {
       const listItem = document.createElement("li");
