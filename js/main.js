@@ -43,10 +43,17 @@ $(document).ready(function () {
     $(this).validate({
       errorClass: "invalid-modal",
       messages: {
-        // email: {
-        //   required: "Пожалуйста, укажите ваш email",
-        //   email: "Ваш email должен быть в формате name@domain.com",
-        // },
+        footerEmail: {
+          required: "Пожалуйста, укажите ваш email",
+          email: "Ваш email должен быть в формате name@domain.com",
+        },
+        footerName: {
+          required: "Пожалуйста, укажите ваше имя",
+          minlength: "Длина имени должна быть не менее 2 символов",
+        },
+        footerMessage: {
+          required: "Пожалуйста, введите текст сообщения",
+        },
         modalEmail: {
           required: "Пожалуйста, укажите email",
           email: "Ваш email должен иметь формат name@domain.com",

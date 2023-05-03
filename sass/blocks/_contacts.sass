@@ -1,0 +1,96 @@
+@import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css')
+.footer
+  // background-color: $dark
+  // color: $light
+  // padding-top: 108px
+  // padding-bottom: 46px
+  &-wrapper
+    display: grid
+    grid-template-columns: repeat(4, minmax(min-content, 1fr))
+    grid-gap: 20px
+    column-gap: 32px
+    grid-auto-rows: minmax(40px, min-content)
+    align-items: start
+    margin-bottom: 99px
+  &__form
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-wrap: wrap
+    max-width: 560px
+    &-wrapper
+      display: flex
+      width: 100%
+      justify-content: space-between
+      align-items: center
+      margin-top: 20px
+  &__input
+    height: 38px
+    width: 100%
+    font-style: normal
+    line-height: 15px
+    font-weight: 400
+    font-size: 16px
+    padding: 0px 10px
+    outline: none
+    border-radius: 6px
+    border: 1px solid $secondary
+    &-group
+      width: 100%
+      margin-bottom: 15px
+      flex-basis: 47%
+  &__message
+    flex-basis: 100%
+    height: 123px
+    resize: none
+    font-style: normal
+    font-weight: 400
+    font-size: 16px
+    padding: 10px 10px
+    line-height: 15px
+    outline: none
+    border-radius: 6px
+    border: 1px solid $secondary
+  &__button
+    padding: 12px 38px
+    font-weight: 400
+    font-size: 16px
+    line-height: 22px
+    text-align: center
+    color: #fff
+    background-color: #4f68ec
+    border: none
+    border-radius: 6px
+    cursor: pointer
+    &:hover
+      background-color: $secondary
+      outline-offset: -3px
+      outline: 1px solid #fff
+  &__info
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    color: #ff4850
+.group-wrapper
+  display: flex
+  // flex-direction: row
+  width: 100%
+  justify-content: space-between
+  align-items: flex-start
+.socials-title
+  color: #3a3a3a
+  font-size: 20px
+  margin: 0 0 20px
+.form-title
+  color: #3a3a3a
+  font-size: 20px
+  margin: 58px 0 20px
+.socials > i
+  font-size: 28px
+  color: #3a3a3a
+  cursor: pointer
+  &:not(:last-child)
+    margin-right: 26px
+  &:hover
+    color: $secondary
+    text-shadow: 0 0 10px rgba(255,255,255,.5), 0 0 10px $accent

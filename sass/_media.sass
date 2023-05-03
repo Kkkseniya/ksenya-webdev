@@ -83,6 +83,10 @@
   .img-wrapper
     height: 262px
     width: 396px
+  .socials-title, .form-title
+    font-size: 18px
+  .socials>i
+    font-size: 26px
 @media (max-width: 992px)
   .logo
     &:hover
@@ -92,7 +96,7 @@
       background-color: $accent
       outline: none
       border-radius: unset
-  .signin-btn
+  .signin-btn, .footer__button
     &:hover
       background-color: $accent
       outline: none
@@ -119,6 +123,10 @@
       background-color: unset
       color: $secondary
       outline: none
+  .hash-list-header li:hover
+    background-color: #f1f1f1
+    border-color: $secondary
+    color: $secondary
   .articles
     &__card:hover
       box-shadow: 0 0 10px 5px #D4D4D4
@@ -145,6 +153,19 @@
     align-self: center
   .portfolio__project
     padding: 10px 10px
+  .socials-title, .form-title
+    font-size: 16px
+    margin-bottom: 16px
+  .form-title
+    margin-top: 46px
+  .socials>i
+    font-size: 22px
+    &:hover
+      color: unset
+      text-shadow: unset
+  .footer
+    &__input, &__message, &__info, &__button
+      font-size: 14px
 @media (max-width: 768px)
   .header-fixed
     position: fixed
@@ -290,6 +311,8 @@
   .button-up
     height: 50px
     width: 50px
+  .form-title
+    margin-top: 36px
 @media (max-width: 480px)
   .header-mobile
     padding: 44px 0
@@ -311,6 +334,20 @@
         margin-top: 10px
   .portfolio__title
     margin-bottom: 14px
+  .socials-title, .form-title
+    font-size: 14px
+    line-height: 20px
+  .socials>i
+    font-size: 18px
+    &:not(:last-child)
+      margin-right: 15px
+  .form-title
+    margin-top: 30px
+  .footer__input, .footer__message, .footer__info, .footer__button
+    font-size: 12px
+  .footer
+    &__button
+      padding: 12px 24px
 @media (max-width: 320px)
   .categories
     padding-top: 108px
@@ -379,3 +416,5 @@
       margin: 15px 0px 15px
     &__description
       font-size: 14px
+  .group-wrapper
+    flex-direction: column
