@@ -87,6 +87,17 @@
     font-size: 18px
   .socials>i
     font-size: 26px
+  .article
+    &__hash-name
+      font-size: 30px
+    &__data
+      font-size: 14px
+    &__text
+      font-size: 16px
+  .comments
+    &__title
+      font-size: 22px
+      margin-bottom: 35px
 @media (max-width: 992px)
   .logo
     &:hover
@@ -96,7 +107,7 @@
       background-color: $accent
       outline: none
       border-radius: unset
-  .signin-btn, .footer__button
+  .signin-btn, .footer__button, .comments__send-btn
     &:hover
       background-color: $accent
       outline: none
@@ -166,6 +177,13 @@
   .footer
     &__input, &__message, &__info, &__button
       font-size: 14px
+  .article
+    &__content
+      width: 100%
+    &__title
+      margin-top: 20px
+  .comments
+    width: 100%
 @media (max-width: 768px)
   .header-fixed
     position: fixed
@@ -268,6 +286,18 @@
     order: 2
     width: 100%
     margin-top: 16px
+  .article
+    &__img-block
+      height: 250px
+    &__title
+      margin-top: 20px
+    &__content
+      margin-top: 0
+  .avatar
+    width: 40px
+    height: 40px
+  .comments-block
+    grid-template-columns: 40px 1fr
 @media (max-width: 576px)
   .categories__block
     grid-auto-rows: 256px
@@ -313,6 +343,21 @@
     width: 50px
   .form-title
     margin-top: 36px
+  .article
+    &__hash-name
+      font-size: 28px
+    &__img-block
+      height: 200px
+    &__title
+      font-size: 22px
+      margin-bottom: 18px
+    &__text:before
+      width: 18px
+  .right-side
+    margin-left: 5px
+  .comments
+    &__send-btn
+      font-size: 14px
 @media (max-width: 480px)
   .header-mobile
     padding: 44px 0
@@ -418,3 +463,34 @@
       font-size: 14px
   .group-wrapper
     flex-direction: column
+  .article
+    &__hash-name
+      font-size: 24px
+    &__img-block
+      height: 150px
+    &__data
+      font-size: 12px
+    &__title
+      margin-bottom: 14px
+      margin-top: 18px
+    &__text
+      font-size: 14px
+      &::before
+        width: 10px
+    &__bottom
+      padding: 10px 10px
+  .comments__title
+    font-size: 18px
+    margin-bottom: 26px
+  .avatar
+    width: 30px
+    height: 30px
+  .comments-block
+    grid-template-columns: 30px 1fr
+  .user-comment, .comments__textarea
+    font-size: 14px
+  .user-name, .comment-date
+    font-size: 12px
+  .comments__send-btn
+    font-size: 14px
+    padding: 10px 15px
