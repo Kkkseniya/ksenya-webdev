@@ -21,6 +21,15 @@ $(document).ready(function () {
   const pagination = document.querySelector(".articles__pagination");
   pagination.innerHTML = "";
 
+  //для поиска по статьям
+  const searchInput = document.querySelector(".search__input");
+  const searchButton = document.querySelector(".search__button");
+
+  //слушатель на кнопку для строки поиска
+  searchButton.addEventListener("click", () => {
+    getData("title", searchInput.value.toLowerCase());
+  });
+
   //функция рендера пагинации
   const renderPagination = (pageCount) => {
     pagination.style.display = "flex"; //
@@ -71,7 +80,7 @@ $(document).ready(function () {
       categoriesBlock.style.display = "none";
       categoriesArticles.style.display = "grid";
 
-      getData(elem.textContent.toLowerCase());
+      getData("hash", elem.textContent.toLowerCase());
 
       //рендер пагинации
       if (currentPosts.length > 0) {
@@ -91,7 +100,7 @@ $(document).ready(function () {
       categoriesBlock.style.display = "none";
       categoriesArticles.style.display = "grid";
 
-      getData(elem.textContent.toLowerCase());
+      getData("hash", elem.textContent.toLowerCase());
 
       //рендер пагинации
       if (currentPosts.length > 0) {
@@ -112,7 +121,7 @@ $(document).ready(function () {
     array.forEach((item) => {
       const card = document.createElement("div");
       card.classList.add("articles__card");
-      card.setAttribute("data-id", item.id); //записала id в атрибут
+      //card.setAttribute("data-id", item.id); //записала id в атрибут
       card.innerHTML = `      
           <a href="/categories/article.html" class="toarticle"></a>
           <div class="card-top">
@@ -130,7 +139,7 @@ $(document).ready(function () {
     });
   };
 
-  const getData = (attribute) => {
+  const getData = (opt, attribute) => {
     fetch("../db/db.json")
       .then((res) => res.json())
       .then((dbObj) => {
@@ -141,12 +150,44 @@ $(document).ready(function () {
           return dateB - dateA;
         });
 
-        const forRender = attribute ? array.filter((item) => item.hash.includes(attribute)) : array;
+        //opt - может быть hash или title
+        let forRender = [];
+        switch (opt) {
+          case "hash":
+            forRender = array.filter((item) => item.hash.includes(attribute));
+            break;
+          case "title":
+            forRender = array.filter((item) => item.title.toLowerCase().includes(attribute));
+            break;
+          default:
+            forRender = array;
+            break;
+        }
+
+        //const forRender = attribute ? array.filter((item) => item.opt.includes(attribute)) : array;
 
         if (forRender.length > 0) {
-          if (attribute) {
-            categoriesTitle.textContent = attribute.toUpperCase();
+          if (opt === "title") {
+            categoriesBlock.style.display = "none";
+            categoriesArticles.innerHTML = "";
+            categoriesArticles.style.display = "grid";
+            renderCards(forRender);
+            categoriesTitle.textContent = 'по запросу "' + attribute + '" найдено:';
+
+            if (forRender.length > 0) {
+              const postPerPage = 6; //вывожу по 6 шт
+              let postPortion = forRender.slice(0, postPerPage);
+              renderCards(postPortion);
+
+              const allPages = Math.ceil(forRender.length / postPerPage);
+              renderPagination(allPages);
+            }
+          } else {
+            if (attribute) {
+              categoriesTitle.textContent = attribute.toUpperCase();
+            }
           }
+
           // categoriesTitle.style.fontSize = "32px";
           categoriesTitle.classList.remove("categories__title--mess");
 
@@ -154,13 +195,20 @@ $(document).ready(function () {
         } else {
           categoriesArticles.innerHTML = "";
           pagination.innerHTML = "";
-          if (attribute) {
-            categoriesTitle.textContent = "По данному хэштегу пока нет статей";
-            // categoriesTitle.style.fontSize = "26px";
+
+          if (opt === "title") {
+            categoriesTitle.textContent = "По вашему запросу ничего не найдено";
+            categoriesBlock.style.display = "none";
             categoriesTitle.classList.add("categories__title--mess");
           } else {
-            categoriesTitle.textContent = "В данном разделе пока нет статей";
-            categoriesTitle.classList.add("categories__title--mess");
+            if (attribute) {
+              categoriesTitle.textContent = "По данному хэштегу пока нет статей";
+              // categoriesTitle.style.fontSize = "26px";
+              categoriesTitle.classList.add("categories__title--mess");
+            } else {
+              categoriesTitle.textContent = "В данном разделе пока нет статей";
+              categoriesTitle.classList.add("categories__title--mess");
+            }
           }
         }
       });

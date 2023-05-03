@@ -10,6 +10,15 @@ $(document).ready(function () {
   //для пагинации
   const pagination = document.querySelector(".articles__pagination");
 
+  //для поиска по статьям
+  const searchInput = document.querySelector(".search__input");
+  const searchButton = document.querySelector(".search__button");
+
+  //слушатель на кнопку для строки поиска
+  searchButton.addEventListener("click", () => {
+    getData("title", searchInput.value.toLowerCase());
+  });
+
   hashListHeader.addEventListener("click", (e) => {
     let elem = e.target;
     if (elem.closest(".hash-list__item")) {
@@ -68,7 +77,7 @@ $(document).ready(function () {
 
       const postPerPage = 6; //вывожу по 6 шт
 
-      let start = (currentPage - 1) * postPerPage; //как получить currentPage??? в эту функцию
+      let start = (currentPage - 1) * postPerPage;
       let end = start + postPerPage;
       let postPortion = currentPosts.slice(start, end);
       renderCards(postPortion);
@@ -87,10 +96,17 @@ $(document).ready(function () {
         });
 
         let forRender = [];
-        if (opt === "type") {
-          forRender = array.filter((item) => item.type === value);
-        } else {
-          forRender = array.filter((item) => item.hash.includes(value));
+
+        switch (opt) {
+          case "type":
+            forRender = array.filter((item) => item.type === value);
+            break;
+          case "hash":
+            forRender = array.filter((item) => item.hash.includes(value));
+            break;
+          case "title":
+            forRender = array.filter((item) => item.title.toLowerCase().includes(value));
+            break;
         }
 
         if (forRender.length > 0) {
@@ -106,6 +122,8 @@ $(document).ready(function () {
                 articlesTitle.textContent = value[0].toUpperCase() + value.slice(1);
                 break;
             }
+          } else if (opt === "title") {
+            articlesTitle.textContent = 'по запросу "' + value + '" найдено:';
           } else {
             articlesTitle.textContent = value.toUpperCase();
           }
@@ -122,13 +140,18 @@ $(document).ready(function () {
         } else {
           cardsBox.innerHTML = "";
           pagination.innerHTML = "";
-          if (opt === "type") {
-            articlesTitle.textContent = "В данном разделе пока нет статей";
-            articlesTitle.classList.add("categories__title--mess");
-            //font-size: 26px;
-          } else {
-            articlesTitle.textContent = "По данному хэштегу пока нет статей";
-            articlesTitle.classList.add("categories__title--mess");
+          switch (opt) {
+            case "type":
+              articlesTitle.textContent = "В данном разделе пока нет статей";
+              articlesTitle.classList.add("categories__title--mess");
+              break;
+            case "hash":
+              articlesTitle.textContent = "По данному хэштегу пока нет статей";
+              articlesTitle.classList.add("categories__title--mess");
+              break;
+            case "title":
+              categoriesTitle.textContent = "По вашему запросу ничего не найдено";
+              break;
           }
         }
       });

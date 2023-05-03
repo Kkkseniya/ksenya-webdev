@@ -5,6 +5,10 @@ $(document).ready(function () {
   const signInBtn = document.querySelector(".signin-btn");
   const closeModalBtn = document.querySelector(".modal__close");
 
+  //для поиска по статьям
+  // const searchInput = document.querySelector(".search__input");
+  // const searchButton = document.querySelector(".search__button");
+
   //открытие меню с мобильного устройства
   burgerBtn.addEventListener("click", () => {
     mobileMenu.classList.toggle("header-menu-active");
@@ -97,7 +101,4 @@ $(document).ready(function () {
       behavior: "smooth",
     });
   });
-
-  //Анимация
-  // AOS.init();
 });
