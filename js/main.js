@@ -67,6 +67,10 @@ $(document).ready(function () {
           minlength: "Длина пароля должена быть не менее 5 символов",
           maxlength: "Длина пароля не должна превышать 20 символов",
         },
+        subscrEmail: {
+          required: "Пожалуйста, укажите ваш email",
+          email: "Ваш email должен иметь формат name@domain.com",
+        },
         // phone: {
         //   required: "Phone is required",
         //   minlength: "The number must be 11 digits long",
