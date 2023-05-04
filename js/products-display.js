@@ -11,12 +11,18 @@ $(document).ready(function () {
   const pagination = document.querySelector(".articles__pagination");
 
   //для поиска по статьям
-  const searchInput = document.querySelector(".search__input");
-  const searchButton = document.querySelector(".search__button");
+  const searchInput = document.querySelector(".search__input-pc");
+  const searchButton = document.querySelector(".search__button-pc");
+  const searchInputMob = document.querySelector(".search__input-mobile");
+  const searchButtonMob = document.querySelector(".search__button-mobile");
 
   //слушатель на кнопку для строки поиска
   searchButton.addEventListener("click", () => {
     getData("title", searchInput.value.toLowerCase());
+  });
+
+  searchButtonMob.addEventListener("click", () => {
+    getData("title", searchInputMob.value.toLowerCase());
   });
 
   hashListHeader.addEventListener("click", (e) => {
