@@ -1,9 +1,13 @@
 $(document).ready(function () {
   var currentPosts = [];
+  const currentUrl = window.location.pathname;
   // const cardsBox = document.querySelector(".articles__box"); //categories-articles
   const categoriesArticles = document.querySelector(".categories-articles"); //это для вывода блока для хэшей
   const categoriesBlock = document.querySelector(".categories__block"); //это блок который всегда на этой странице
-  //вместо categories__block на странице портфолио portfolio-block
+  const portfolioBlock = document.querySelector(".portfolio-block"); //это блок который всегда на странице портфолио
+  const contactsBlock = document.querySelector(".contacts-block"); //это блок который всегда на странице контактов
+  const articleContent = document.querySelector(".article__content");
+  const comments = document.querySelector(".comments");
 
   //для страницы портфолио открытие по кнопке
   const portfolioBtns = document.querySelectorAll(".portfolio__btn");
@@ -77,7 +81,23 @@ $(document).ready(function () {
   hashListHeader.addEventListener("click", (e) => {
     let elem = e.target;
     if (elem.closest(".hash-list__item")) {
-      categoriesBlock.style.display = "none";
+      // categoriesBlock.style.display = "none";
+      switch (true) {
+        case currentUrl.includes("portfolio"):
+          portfolioBlock.style.display = "none";
+          break;
+        case currentUrl.includes("contacts"):
+          contactsBlock.style.display = "none";
+          break;
+        case currentUrl.includes("article"):
+          articleContent.style.display = "none";
+          comments.style.display = "none";
+          break;
+        default:
+          categoriesBlock.style.display = "none";
+          break;
+      }
+
       categoriesArticles.style.display = "grid";
 
       getData("hash", elem.textContent.toLowerCase());
@@ -97,7 +117,22 @@ $(document).ready(function () {
   hashList.addEventListener("click", (e) => {
     let elem = e.target;
     if (elem.closest(".hash-list__item")) {
-      categoriesBlock.style.display = "none";
+      // categoriesBlock.style.display = "none";
+      switch (true) {
+        case currentUrl.includes("portfolio"):
+          portfolioBlock.style.display = "none";
+          break;
+        case currentUrl.includes("contacts"):
+          contactsBlock.style.display = "none";
+          break;
+        case currentUrl.includes("article"):
+          articleContent.style.display = "none";
+          comments.style.display = "none";
+          break;
+        default:
+          categoriesBlock.style.display = "none";
+          break;
+      }
       categoriesArticles.style.display = "grid";
 
       getData("hash", elem.textContent.toLowerCase());
@@ -163,59 +198,88 @@ $(document).ready(function () {
             forRender = array;
             break;
         }
-
+        console.log(forRender);
         //const forRender = attribute ? array.filter((item) => item.opt.includes(attribute)) : array;
 
         if (forRender.length > 0) {
-          if (opt === "title") {
-            categoriesBlock.style.display = "none";
-            categoriesArticles.innerHTML = "";
-            categoriesArticles.style.display = "grid";
-            renderCards(forRender);
-            categoriesTitle.textContent = 'по запросу "' + attribute + '" найдено:';
-
-            if (forRender.length > 0) {
-              const postPerPage = 6; //вывожу по 6 шт
-              let postPortion = forRender.slice(0, postPerPage);
-              renderCards(postPortion);
-
-              const allPages = Math.ceil(forRender.length / postPerPage);
-              renderPagination(allPages);
-            }
-          } else {
-            if (attribute) {
-              categoriesTitle.textContent = attribute.toUpperCase();
-            }
+          // if (opt === "title") {
+          // categoriesBlock.style.display = "none";
+          switch (true) {
+            case currentUrl.includes("portfolio"):
+              portfolioBlock.style.display = "none";
+              break;
+            case currentUrl.includes("contacts"):
+              contactsBlock.style.display = "none";
+              break;
+            case currentUrl.includes("article"):
+              articleContent.style.display = "none";
+              comments.style.display = "none";
+              break;
+            default:
+              categoriesBlock.style.display = "none";
+              break;
           }
+          categoriesArticles.innerHTML = "";
+          categoriesArticles.style.display = "grid";
+          renderCards(forRender);
 
-          // categoriesTitle.style.fontSize = "32px";
+          if (opt === "title" && attribute) {
+            categoriesTitle.textContent = 'по запросу "' + attribute + '" найдено:';
+          } else {
+            categoriesTitle.textContent = attribute.toUpperCase();
+          }
           categoriesTitle.classList.remove("categories__title--mess");
 
           currentPosts = forRender;
+
+          const postPerPage = 6; //вывожу по 6 шт
+          let postPortion = forRender.slice(0, postPerPage);
+          renderCards(postPortion);
+
+          const allPages = Math.ceil(forRender.length / postPerPage);
+          renderPagination(allPages);
+          //} else {
+          //if (attribute) {
+          // categoriesTitle.textContent = attribute.toUpperCase();
+          //}
+          //}
+
+          // categoriesTitle.style.fontSize = "32px";
+          // categoriesTitle.classList.remove("categories__title--mess");
+
+          // currentPosts = forRender;
         } else {
           categoriesArticles.innerHTML = "";
           pagination.innerHTML = "";
 
           if (opt === "title") {
             categoriesTitle.textContent = "По вашему запросу ничего не найдено";
-            categoriesBlock.style.display = "none";
+            // categoriesBlock.style.display = "none";
+            switch (true) {
+              case currentUrl.includes("portfolio"):
+                portfolioBlock.style.display = "none";
+                break;
+              case currentUrl.includes("contacts"):
+                contactsBlock.style.display = "none";
+                break;
+              case currentUrl.includes("article"):
+                articleContent.style.display = "none";
+                comments.style.display = "none";
+                break;
+              default:
+                categoriesBlock.style.display = "none";
+                break;
+            }
+            categoriesTitle.classList.add("categories__title--mess");
+          } else if (opt === "hash") {
+            categoriesTitle.textContent = "По данному хэштегу пока нет статей";
+            // categoriesTitle.style.fontSize = "26px";
             categoriesTitle.classList.add("categories__title--mess");
           } else {
-            if (attribute) {
-              categoriesTitle.textContent = "По данному хэштегу пока нет статей";
-              // categoriesTitle.style.fontSize = "26px";
-              categoriesTitle.classList.add("categories__title--mess");
-            } else {
-              categoriesTitle.textContent = "В данном разделе пока нет статей";
-              categoriesTitle.classList.add("categories__title--mess");
-            }
+            categoriesTitle.textContent = "В данном разделе пока нет статей";
+            categoriesTitle.classList.add("categories__title--mess");
           }
         }
       });
   };
-
-  getData();
-
-  const currentUrl = window.location.pathname;
-  // console.log(currentUrl.includes("portfolio"));
 });
