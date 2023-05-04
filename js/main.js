@@ -5,9 +5,8 @@ $(document).ready(function () {
   const signInBtn = document.querySelector(".signin-btn");
   const closeModalBtn = document.querySelector(".modal__close");
 
-  //для поиска по статьям
-  // const searchInput = document.querySelector(".search__input");
-  // const searchButton = document.querySelector(".search__button");
+  //для открытия модалки по кнопке подписки
+  const subscrBtn = document.querySelector(".subscr-btn");
 
   //открытие меню с мобильного устройства
   burgerBtn.addEventListener("click", () => {
@@ -33,6 +32,14 @@ $(document).ready(function () {
 
   signInBtn.addEventListener("click", openModal);
   closeModalBtn.addEventListener("click", closeModal);
+
+  subscrBtn.addEventListener("click", (e) => {
+    if (document.querySelector(".subscr-input").classList.contains("valid")) {
+      openModal();
+      document.querySelector(".modal__form").style.display = "none";
+      document.querySelector(".modal__title").innerHTML = `Спасибо!<br>Подписка успешно оформлена!`;
+    }
+  });
 
   //закрытие модального окна по esc
   document.addEventListener("keyup", function (event) {
