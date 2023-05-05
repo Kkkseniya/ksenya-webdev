@@ -6,28 +6,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ksenya WebDev</title>
-  <link rel="icon" type="image/png" sizes="32*32" href="/img/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16*16" href="/img/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32*32" href="../img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16*16" href="../img/favicon-16.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/aos.css">
-  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="../css/aos.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
   <div class="main-wrapper">
-
     <header class="header-fixed">
       <div class="container">
         <div class="header-top">
-          <a href="/index.html" class="logo"><img src="./img/blog-logo.svg" alt="Logo"></a>
+          <a href="../index.html" class="logo"><img src="../img/blog-logo.svg" alt="Logo"></a>
 
           <div class="header-top__right">
             <form action="#" class="search mobile-none">
               <input type="text" class="search__input search__input-pc" placeholder="Найти" />
               <button type="button" class="search__button search__button-pc">
-                <img src="img/search.svg" alt="Icon: search" />
+                <img src="../img/search.svg" alt="Icon: search" />
               </button>
             </form>
             <button class="signin-btn">Войти</button>
@@ -69,7 +69,7 @@
           <form action="#" class="search">
             <input type="text" class="search__input search__input-mobile" placeholder="Найти" />
             <button type="button" class="search__button search__button-mobile">
-              <img src="img/search.svg" alt="Icon: search" />
+              <img src="../img/search.svg" alt="Icon: search" />
             </button>
           </form>
 
@@ -86,7 +86,7 @@
       </div>
     </header>
 
-    <section class="categories">
+    <section class="articles">
       <div class="container">
         <div class="list-container">
           <ul class="hash-list mobile-none hash-list-section">
@@ -98,49 +98,50 @@
             <li class="hash-list__item">Bootstrap</li>
           </ul>
         </div>
-        <h1 class="categories__title">Категории</h1>
+
+        <h1 class="categories__title">Контакты</h1>
 
         <div class="categories-articles"></div>
 
-        <!-- <div class="pagination-wrapper"> -->
-        <!-- <div class="articles__arrow"><img src="/img/pagination-arrow.svg"></div> -->
         <ul class="articles__pagination">
         </ul>
-        <!-- <div class="articles__arrow articles__arrow--right"><img src="/img/pagination-arrow.svg"></div> -->
-        <!-- </div> -->
 
-        <div class="categories__block">
-          <div class="categories__card">
-            <a href="/categories/frontend.html" class="card-link"></a>
-            <img class="categories__img" src="./img/categories-frontend.PNG" alt="frontend image">
-            <h2 class="card-title">frontend</h2>
+        <div class="contacts-block">
+          <p class="socials-title">Вы можете связаться со мной через соцсети</p>
+          <div class="socials">
+            <i class="fab fa-vk"></i>
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-instagram"></i>
           </div>
-          <div class="categories__card">
-            <a href="/categories/backend.html" class="card-link"></a>
-            <img class="categories__img" src="./img/categories-backend.PNG" alt="backend image">
-            <h2 class="card-title">backend</h2>
-          </div>
-          <div class="categories__card">
-            <a href="/categories/analytics.html" class="card-link"></a>
-            <img class="categories__img" src="./img/categories-analytics.PNG" alt="analytics image">
-            <h2 class="card-title">Аналитика</h2>
-          </div>
-          <div class="categories__card">
-            <a href="/categories/interviews.html" class="card-link"></a>
-            <img class="categories__img" src="./img/categories-interview.PNG" alt="interview image">
-            <h2 class="card-title">Собеседования</h2>
-          </div>
-          <div class="categories__card">
-            <a href="/categories/portfolio.html" class="card-link"></a>
-            <img class="categories__img" src="./img/categories-portfolio.jpg" alt="portfolio image">
-            <h2 class="card-title">Портфолио</h2>
-          </div>
-          <div class="categories__card">
-            <a href="/categories/contacts.html" class="card-link"></a>
-            <img class="categories__img" src="./img/categories-contacts.jpg" alt="contacts image">
-            <h2 class="card-title">Контакты</h2>
-          </div>
+
+          <p class="form-title">Также вы можете написать мне на электронную почту</p>
+
+          <form action="../php/mail.php" method="post" class="footer__form form">
+            <div class="group-wrapper">
+              <div class="footer__input-group">
+                <input type="text" class="input footer__input" placeholder="Имя*" name="footerName" minlength="2"
+                  required>
+              </div>
+              <div class="footer__input-group">
+                <input type="email" class="input footer__input" placeholder="Email*" name="footerEmail" required>
+              </div>
+            </div>
+            <textarea class="message footer__message" placeholder="Сообщение*" name="footerMessage" required></textarea>
+            <div class="footer__form-wrapper">
+              <span class="footer__info">* Обязательные поля</span>
+              <button class="button footer__button" type="submit">Отправить</button>
+            </div>
+          </form>
+
+          <p class="form-title subscr-title">Оформите подписку на блог и вы всегда будете в курсе обновлений</p>
+
+          <form action="#" method="post" class="subscr-form form">
+            <input type="email" class="footer__input subscr-input" placeholder="Email*" name="subscrEmail" required>
+            <button class="footer__button subscr-btn" type="button">Подписаться</button>
+          </form>
+
         </div>
+
       </div>
     </section>
 
@@ -151,12 +152,14 @@
     </section>
 
   </div>
+
+
   <div class="modal">
     <div class="modal__overlay"></div>
     <!-- /.modal__overlay -->
     <div class="modal__dialog">
       <a href="#" class="modal__close">
-        <img src="img/close.svg" alt="icon: close">
+        <img src="../img/close.svg" alt="icon: close">
       </a>
       <h3 class="modal__title modal__title--mb-mess">Вход в аккаунт</h3>
 
@@ -177,15 +180,13 @@
   </div>
   <!-- /.modal -->
 
-  <a class="button-up button-up--hide" href="#"><img src="img/up-button.svg" alt="up-button" class="up-icon"></a>
+  <a class="button-up button-up--hide" href="#"><img src="../img/up-button.svg" alt="up-button" class="up-icon"></a>
 
-  <script src="js/jquery-3.6.4.min.js"></script>
-  <script src="js/jquery.validate.min.js"></script>
+  <script src="../js/jquery-3.6.4.min.js"></script>
+  <script src="../js/jquery.validate.min.js"></script>
 
-  <script src="js/aos.js"></script>
   <script src="/js/products-main.js"></script>
-  <!-- <script src="/js/products-display.js"></script> -->
-  <script src="js/main.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 
 </html>

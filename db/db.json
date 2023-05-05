@@ -1,0 +1,128 @@
+[
+  {
+    "id": "1",
+    "type": "frontend",
+    "img": "../img/articles-bootstrap.PNG",
+    "hash": ["bootstrap"],
+    "date": "2023.04.21",
+    "title": "Аккордеон на Bootstrap",
+    "description": "В этой статье хочу рассказать об аккордеонах - списках с элементами, каждое из которых имеет раскрывающееся описание."
+  },
+  {
+    "id": "2",
+    "type": "frontend",
+    "img": "../img/articles-css.png",
+    "hash": ["css"],
+    "date": "2023.03.12",
+    "title": "Свойство position в CSS",
+    "description": "Рассказываю о различных способах применения свойства position в своих работах."
+  },
+  {
+    "id": "3",
+    "type": "frontend",
+    "img": "../img/articles-css-backgroung.jpg",
+    "hash": ["css"],
+    "date": "2023.04.20",
+    "title": "Свойство background в CSS",
+    "description": "Показываю как с помощью свойства background делала на сайте фоны, корректно отображающиеся во всех браузерах."
+  },
+  {
+    "id": "4",
+    "type": "frontend",
+    "img": "../img/articles-css-underline.PNG",
+    "hash": ["css"],
+    "date": "2023.03.10",
+    "title": "Подчеркивание текста на CSS",
+    "description": "Делюсь способами подчеркивания заголовков на сайте."
+  },
+  {
+    "id": "5",
+    "type": "frontend",
+    "img": "../img/articles-frontend-parallax.PNG",
+    "hash": ["html", "css", "javascript"],
+    "date": "2023.04.15",
+    "title": "Создание parallax эффекта",
+    "description": "Описываю пошагово добавление parallax эффекта на сайт и рассказываю о библиотеках, которые использовала."
+  },
+  {
+    "id": "6",
+    "type": "frontend",
+    "img": "../img/articles-frontend-video.PNG",
+    "hash": ["html", "css", "javascript"],
+    "date": "2023.04.08",
+    "title": "Добавление видео на сайт",
+    "description": "Показываю как можно добавить и оформить видео на сайте."
+  },
+  {
+    "id": "7",
+    "type": "frontend",
+    "img": "../img/articles-html.jpg",
+    "hash": ["html"],
+    "date": "2023.03.24",
+    "title": "Верстка таблиц на HTML",
+    "description": "Показываю простой способ верстки таблиц на сайте."
+  },
+  {
+    "id": "8",
+    "type": "frontend",
+    "img": "../img/articles-js-slider.PNG",
+    "hash": ["javascript"],
+    "date": "2023.04.18",
+    "title": "Слайдер на JavaScript",
+    "description": "Рассказываю как сделать слайдер и какими библиотеками удобнее пользоваться."
+  },
+  {
+    "id": "9",
+    "type": "backend",
+    "img": "../img/articles-php-dbconnection.jpg",
+    "hash": ["php"],
+    "date": "2023.04.12",
+    "title": "Подключение к базе данных",
+    "description": "Рассматриваю подключение на PHP к различным СУБД."
+  },
+  {
+    "id": "10",
+    "type": "backend",
+    "img": "../img/articles-php-email.PNG",
+    "hash": ["php"],
+    "date": "2023.04.14",
+    "title": "Отправка писем на PHP",
+    "description": "Сегодня хочу рассмотреть настройку отправки писем с сайта на почтовый адрес."
+  },
+  {
+    "id": "11",
+    "type": "analytics",
+    "img": "../img/analytics-2.jpg",
+    "hash": ["исследование"],
+    "date": "2023.04.02",
+    "title": "Исследование от Хабр.Карьера",
+    "description": "Обсуждаем резульаты исследования динамики зарплат специалистов IT-сферы."
+  },
+  {
+    "id": "12",
+    "type": "analytics",
+    "img": "../img/analytics-1.jpg",
+    "hash": ["обзор"],
+    "date": "2023.04.05",
+    "title": "Обзор вакансий на HeadHunter",
+    "description": "Обсуждаем наиболее популярные направления исходя из количества вакансий на HeadHunter."
+  },
+  {
+    "id": "13",
+    "type": "interviews",
+    "img": "../img/interviews-1.PNG",
+    "hash": ["собеседование"],
+    "date": "2023.03.10",
+    "title": "Серии вопросов на собеседованиях",
+    "description": "Обсуждаем серии вопросов на собеседованиях и как лучше давать на них ответы."
+  },
+  {
+    "id": "14",
+    "type": "interviews",
+    "img": "../img/interviews-2.PNG",
+    "hash": ["собеседование frontend"],
+    "date": "2023.03.12",
+    "title": "Собеседование на frontend-разработчика",
+    "description": "Обсуждаем наиболее частые вопросы собеседований на позицию frontend-разработчик."
+  }
+]
