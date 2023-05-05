@@ -31,6 +31,12 @@ $(document).ready(function () {
   const searchInputMob = document.querySelector(".search__input-mobile");
   const searchButtonMob = document.querySelector(".search__button-mobile");
 
+  //слушатель на родительский блок для динамических статей
+  $(categoriesArticles).on("click", ".articles__card", (e) => {
+    const index = e.currentTarget.dataset.index;
+    document.location.assign("/categories/article.html?&" + index);
+  });
+
   //слушатель на кнопку для строки поиска
   searchButton.addEventListener("click", () => {
     getData("title", searchInput.value.toLowerCase());
@@ -51,8 +57,6 @@ $(document).ready(function () {
       pagination.append(listItem);
     }
   };
-
-  // const portfolioBtnText = portfolioBtn.querySelector("p");
 
   //кнопка на странице портфолио, которая разворачивает/сворачивает описание
   portfolioBtns.forEach((item, index) => {
@@ -77,7 +81,7 @@ $(document).ready(function () {
 
       const postPerPage = 6; //вывожу по 6 шт
 
-      let start = (currentPage - 1) * postPerPage; //как получить currentPage??? в эту функцию
+      let start = (currentPage - 1) * postPerPage;
       let end = start + postPerPage;
       let postPortion = currentPosts.slice(start, end);
       renderCards(postPortion);
@@ -162,7 +166,7 @@ $(document).ready(function () {
     array.forEach((item) => {
       const card = document.createElement("div");
       card.classList.add("articles__card");
-      //card.setAttribute("data-id", item.id); //записала id в атрибут
+      card.setAttribute("data-index", item.id);
       card.innerHTML = `      
           <a href="/categories/article.html" class="toarticle"></a>
           <div class="card-top">
