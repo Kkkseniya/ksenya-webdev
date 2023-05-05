@@ -6,7 +6,7 @@ $(document).ready(function () {
   const categoriesBlock = document.querySelector(".categories__block"); //это блок который всегда на этой странице
   const portfolioBlock = document.querySelector(".portfolio-block"); //это блок который всегда на странице портфолио
   const contactsBlock = document.querySelector(".contacts-block"); //это блок который всегда на странице контактов
-  const articleContent = document.querySelector(".article__content");
+  const articleContent = document.querySelector(".article-box");
   const comments = document.querySelector(".comments");
 
   //для страницы портфолио открытие по кнопке
@@ -208,7 +208,6 @@ $(document).ready(function () {
             forRender = array;
             break;
         }
-        console.log(forRender);
         //const forRender = attribute ? array.filter((item) => item.opt.includes(attribute)) : array;
 
         if (forRender.length > 0) {
