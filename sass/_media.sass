@@ -98,6 +98,8 @@
     &__title
       font-size: 22px
       margin-bottom: 35px
+  .sendform-title
+    font-size: 28px
 @media (max-width: 992px)
   .logo
     &:hover
@@ -107,7 +109,7 @@
       background-color: $accent
       outline: none
       border-radius: unset
-  .signin-btn, .footer__button, .comments__send-btn
+  .signin-btn, .footer__button, .comments__send-btn, .sendform-button
     &:hover
       background-color: $accent
       outline: none
@@ -184,6 +186,10 @@
       margin-top: 20px
   .comments
     width: 100%
+  .sendform-title
+    font-size: 24px
+  .sendform-button
+    padding: 12px 30px
 @media (max-width: 768px)
   .header-fixed
     position: fixed
@@ -298,6 +304,11 @@
     height: 40px
   .comments-block
     grid-template-columns: 40px 1fr
+  .sendform-title
+    font-size: 20px
+  .sendform-button
+    padding: 10px 30px
+    font-size: 14px
 @media (max-width: 576px)
   .categories__block
     grid-auto-rows: 256px
@@ -394,12 +405,15 @@
     font-size: 12px
   .footer
     &__button
-      padding: 12px 24px
+      padding: 12px 20px
+      width: 118px
   .subscr-input
     padding-right: 128px
   .subscr-btn
     width: 118px
     padding: 0
+  .sendform-title
+    line-height: 26px
 @media (max-width: 320px)
   .categories
     padding-top: 108px
@@ -501,3 +515,8 @@
   .comments__send-btn
     font-size: 14px
     padding: 10px 15px
+  .sendform-title
+    font-size: 18px
+  .sendform-button
+    padding: 8px 18px
+    font-size: 12px
