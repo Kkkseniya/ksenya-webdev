@@ -116,6 +116,10 @@ $(document).ready(function () {
         footerMessage: {
           required: "Пожалуйста, введите текст сообщения",
         },
+        modalName: {
+          required: "Пожалуйста, укажите ваше имя",
+          minlength: "Длина имени должна быть не менее 2 символов",
+        },
         modalEmail: {
           required: "Пожалуйста, укажите email",
           email: "Ваш email должен иметь формат name@domain.com",
