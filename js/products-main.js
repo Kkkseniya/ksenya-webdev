@@ -33,9 +33,7 @@ $(document).ready(function () {
 
   //слушатель на родительский блок для динамических статей
   $(categoriesArticles).on("click", ".articles__card", (e) => {
-    console.log("listener fron products-main");
     const index = e.currentTarget.dataset.index;
-    console.log("index fron products-main: ", index);
     document.location.assign("/categories/article.html?&" + index);
   });
 

@@ -47,8 +47,6 @@ $(document).ready(function () {
 
   if (currentUrl.includes("article")) {
     const index = decodeURIComponent(location.search).split("&").pop();
-    console.log("this is article page");
-    console.log(index);
 
     fetch("../db/db.json")
       .then((res) => res.json())
