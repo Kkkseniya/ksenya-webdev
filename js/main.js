@@ -5,6 +5,13 @@ $(document).ready(function () {
   const signInBtn = document.querySelector(".signin-btn");
   const closeModalBtn = document.querySelector(".modal__close");
 
+  //форма из модального окна
+  const modalForm = document.querySelector(".modal__form");
+  //форма "Подписаться"
+  const subscrForm = document.querySelector(".subscr-form");
+  //форма со страницы статьи
+  const commentsForm = document.querySelector(".comments__form");
+
   //для вывода нужной статьи в article.html
   const currentUrl = window.location.pathname;
 
@@ -54,6 +61,10 @@ $(document).ready(function () {
         const article = dbObj.filter((item) => item.id === index);
         renderArticle(article[0]);
       });
+
+    commentsForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+    });
   }
 
   //открытие меню с мобильного устройства
@@ -90,6 +101,10 @@ $(document).ready(function () {
         document.querySelector(".modal__title").innerHTML = `Спасибо!<br>Подписка успешно оформлена!`;
       }
     });
+
+    subscrForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+    });
   }
 
   //закрытие модального окна по esc
@@ -98,6 +113,11 @@ $(document).ready(function () {
       document.querySelector(".modal__overlay").classList.remove("modal__overlay--visible");
       document.querySelector(".modal__dialog").classList.remove("modal__dialog--visible");
     }
+  });
+
+  //запрет отправки форм
+  modalForm.addEventListener("submit", (e) => {
+    e.preventDefault();
   });
 
   //валидация формы
@@ -132,6 +152,10 @@ $(document).ready(function () {
         subscrEmail: {
           required: "Пожалуйста, укажите ваш email",
           email: "Ваш email должен иметь формат name@domain.com",
+        },
+        commentArea: {
+          required: "Пожалуйста, введите текст комментария",
+          minlength: "Текст комментария должен быть не менее 10 символов",
         },
         // phone: {
         //   required: "Phone is required",
