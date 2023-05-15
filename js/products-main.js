@@ -33,7 +33,9 @@ $(document).ready(function () {
 
   //слушатель на родительский блок для динамических статей
   $(categoriesArticles).on("click", ".articles__card", (e) => {
+    console.log("listener fron products-main");
     const index = e.currentTarget.dataset.index;
+    console.log("index fron products-main: ", index);
     document.location.assign("/categories/article.html?&" + index);
   });
 
@@ -168,7 +170,7 @@ $(document).ready(function () {
       card.classList.add("articles__card");
       card.setAttribute("data-index", item.id);
       card.innerHTML = `      
-          <a href="/categories/article.html" class="toarticle"></a>
+          <a class="toarticle"></a>
           <div class="card-top">
             <img class="card-top__img" src=${item.img}>
             <p class="card-top__hash">${item.hash.join(", ")}</p>

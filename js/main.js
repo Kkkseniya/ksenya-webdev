@@ -47,6 +47,8 @@ $(document).ready(function () {
 
   if (currentUrl.includes("article")) {
     const index = decodeURIComponent(location.search).split("&").pop();
+    console.log("this is article page");
+    console.log(index);
 
     fetch("../db/db.json")
       .then((res) => res.json())
@@ -126,7 +128,7 @@ $(document).ready(function () {
         },
         modalPass: {
           required: "Пожалуйста, укажите пароль",
-          minlength: "Длина пароля должена быть не менее 5 символов",
+          minlength: "Длина пароля должна быть не менее 5 символов",
           maxlength: "Длина пароля не должна превышать 20 символов",
         },
         subscrEmail: {
