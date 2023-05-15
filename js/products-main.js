@@ -1,6 +1,12 @@
 $(document).ready(function () {
   var currentPosts = [];
   const currentUrl = window.location.pathname;
+  //модальные окна
+  var modalOverlay = $(".modal__overlay");
+  var modalDialog = $(".modal__dialog");
+  const mobileMenu = document.querySelector(".header-mobile");
+  const burgerBtn = document.querySelector(".burger-btn");
+
   // const cardsBox = document.querySelector(".articles__box"); //categories-articles
   const categoriesArticles = document.querySelector(".categories-articles"); //это для вывода блока для хэшей
   const categoriesBlock = document.querySelector(".categories__block"); //это блок который всегда на этой странице
@@ -43,6 +49,12 @@ $(document).ready(function () {
   });
 
   searchButtonMob.addEventListener("click", () => {
+    setTimeout(() => {
+      modalOverlay.removeClass("modal__overlay--visible");
+      modalDialog.removeClass("modal__dialog--visible");
+      mobileMenu.classList.toggle("header-menu-active");
+      burgerBtn.classList.toggle("btn-clicked");
+    }, 400);
     getData("title", searchInputMob.value.toLowerCase());
   });
 
@@ -91,6 +103,12 @@ $(document).ready(function () {
   hashListHeader.addEventListener("click", (e) => {
     let elem = e.target;
     if (elem.closest(".hash-list__item")) {
+      setTimeout(() => {
+        modalOverlay.removeClass("modal__overlay--visible");
+        modalDialog.removeClass("modal__dialog--visible");
+        mobileMenu.classList.toggle("header-menu-active");
+        burgerBtn.classList.toggle("btn-clicked");
+      }, 400);
       // categoriesBlock.style.display = "none";
       switch (true) {
         case currentUrl.includes("portfolio"):

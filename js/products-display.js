@@ -1,6 +1,11 @@
 $(document).ready(function () {
   var currentPosts = [];
   const cardsBox = document.querySelector(".articles__box");
+  //модальные окна
+  var modalOverlay = $(".modal__overlay");
+  var modalDialog = $(".modal__dialog");
+  const mobileMenu = document.querySelector(".header-mobile");
+  const burgerBtn = document.querySelector(".burger-btn");
 
   //для вывода по хэштегам
   const hashList = document.querySelector(".hash-list-section");
@@ -28,16 +33,31 @@ $(document).ready(function () {
   });
 
   searchButtonMob.addEventListener("click", () => {
+    setTimeout(() => {
+      modalOverlay.removeClass("modal__overlay--visible");
+      modalDialog.removeClass("modal__dialog--visible");
+      mobileMenu.classList.toggle("header-menu-active");
+      burgerBtn.classList.toggle("btn-clicked");
+    }, 400);
     getData("title", searchInputMob.value.toLowerCase());
   });
 
+  //слушатель для кликов по хэшам в мобильном меню
   hashListHeader.addEventListener("click", (e) => {
     let elem = e.target;
     if (elem.closest(".hash-list__item")) {
+      setTimeout(() => {
+        modalOverlay.removeClass("modal__overlay--visible");
+        modalDialog.removeClass("modal__dialog--visible");
+        mobileMenu.classList.toggle("header-menu-active");
+        burgerBtn.classList.toggle("btn-clicked");
+      }, 400);
+
       getData("hash", elem.textContent.toLowerCase());
     }
   });
 
+  //слушатель для кликов по хэшам
   hashList.addEventListener("click", (e) => {
     let elem = e.target;
     if (elem.closest(".hash-list__item")) {
