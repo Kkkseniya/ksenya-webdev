@@ -1,7 +1,36 @@
+@media (max-width: 1600px)
+  .categories-articles, .articles__box
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr))
+    grid-gap: 20px
+  .categories__title
+    font-size: 30px
+    &--mess
+      font-size: 22px
+  .articles__title
+    font-size: 30px
+  .card-top__hash
+    font-size: 24px
+  .portfolio
+    &__title
+      font-size: 26px
+    &__description
+      font-size: 16px
+      line-height: 24px
+    &__full-description
+      font-size: 16px
+      line-height: 24px
+  .portfolio__btn p
+    font-size: 14px
+  .img-wrapper
+    height: 311px
+    width: 487px
+@media (max-width: 1400px)
+  .categories-articles, .articles__box
+    grid-template-columns: repeat(auto-fill, minmax(308px, 1fr))
 @media (max-width: 1200px)
   .container
     max-width: 90%
-  .categories-list
+  .categories-list a
     font-size: 14px
     letter-spacing: 2px
   .signin-btn
@@ -11,19 +40,156 @@
     padding: 24px 0px
   .logo
     width: 150px
-  .categories__title
-    margin-top: 36px
   .card-title
     font-size: 24px
+  .modal
+    &__title
+      font-size: 16px
+    &__button
+      width: 148px
+  .categories-articles, .articles__box
+    grid-gap: 30px
+    grid-auto-rows: 460px
+  .articles__title
+    font-size: 26px
+  .categories__title
+    font-size: 26px
+    &--mess
+      font-size: 18px
+  .card-top
+    height: 230px
+    &__img
+      height: 230px
+    &__hash
+      font-size: 22px
+  .card-bottom
+    height: 230px
+    &__title
+      font-size: 20px
+    &__description
+      font-size: 16px
+  .portfolio
+    &__project
+      padding: 10px 20px
+    &__title
+      font-size: 22px
+      margin-bottom: 16px
+    &__description
+      line-height: 20px
+      margin-bottom: 14px
+    &__full-description
+      line-height: 20px
+      margin-top: 14px
+  .img-wrapper
+    height: 262px
+    width: 396px
+  .socials-title, .form-title
+    font-size: 18px
+  .socials>i
+    font-size: 26px
+  .article
+    &__hash-name
+      font-size: 30px
+    &__data
+      font-size: 14px
+    &__text
+      font-size: 16px
+  .comments
+    &__title
+      font-size: 22px
+      margin-bottom: 35px
+  .sendform-title
+    font-size: 28px
 @media (max-width: 992px)
+  .logo
+    &:hover
+      transform: unset
+  .search__button
+    &:hover
+      background-color: $accent
+      outline: none
+      border-radius: unset
+  .signin-btn, .footer__button, .comments__send-btn, .sendform-button
+    &:hover
+      background-color: $accent
+      outline: none
+  .portfolio__btn
+    &:hover
+      background-color: $accent
+      outline: none
   .categories-block
     grid-auto-rows: 300px
-  .categories-list
+  .categories-list a
     letter-spacing: 0px
+    &:hover
+      color: #fff
+  .modal__button
+    &:hover
+      background-color: $accent
+  .categories__card:hover
+    transform: unset
+    &:hover::after
+      background: #000000
+      opacity: 0.4
+  .hash-list li
+    &:hover
+      background-color: unset
+      color: $secondary
+      outline: none
+  .hash-list-header li:hover
+    background-color: #f1f1f1
+    border-color: $secondary
+    color: $secondary
+  .articles
+    &__card:hover
+      box-shadow: 0 0 10px 5px #D4D4D4
+    &__page
+      color: $secondary
+      background-color: unset
   .header-top__right
     width: 494px
   .footer p
     font-size: 12px
+  .modal__form-wrapper
+    flex-wrap: wrap
+  .modal
+    &__button
+      width: 100%
+      &:first-child
+        margin-bottom: 10px
+    &__dialog
+      width: 60%
+      padding: 32px 40px
+  .img-wrapper
+    height: 190px
+    width: 316px
+    align-self: center
+  .portfolio__project
+    padding: 10px 10px
+  .socials-title, .form-title
+    font-size: 16px
+    margin-bottom: 16px
+  .form-title
+    margin-top: 46px
+  .socials>i
+    font-size: 22px
+    &:hover
+      color: unset
+      text-shadow: unset
+  .footer
+    &__input, &__message, &__info, &__button
+      font-size: 14px
+  .article
+    &__content
+      width: 100%
+    &__title
+      margin-top: 20px
+  .comments
+    width: 100%
+  .sendform-title
+    font-size: 24px
+  .sendform-button
+    padding: 12px 30px
 @media (max-width: 768px)
   .header-fixed
     position: fixed
@@ -50,6 +216,8 @@
     align-items: center
     padding: 0
     letter-spacing: 1px
+    & a
+      letter-spacing: 1px
     & li:not(:last-child)
       margin-bottom: 24px
   .hash-list
@@ -88,7 +256,7 @@
   .list-container
     max-width: 590px
   .categories
-    padding-top: 126px
+    // padding-top: 126px
     padding-bottom: 60px
     &__block
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))
@@ -99,6 +267,48 @@
       margin-top: 0
   .card-title
     font-size: 20px
+  .modal__dialog
+    width: 80%
+  .articles, .categories
+    padding-top: 132px
+  .articles__page
+    font-size: 16px
+  .portfolio
+    &__project
+      flex-direction: column
+      padding: 15px 15px
+    &__title
+      font-size: 20px
+    &__description, &__full-description
+      font-size: 14px
+      line-height: 22px
+    &__btn
+      width: 126px
+      padding: 9px 12px
+  .img-wrapper
+    order: 1
+    width: 100%
+  .content-wrapper
+    order: 2
+    width: 100%
+    margin-top: 16px
+  .article
+    &__img-block
+      height: 250px
+    &__title
+      margin-top: 20px
+    &__content
+      margin-top: 0
+  .avatar
+    width: 40px
+    height: 40px
+  .comments-block
+    grid-template-columns: 40px 1fr
+  .sendform-title
+    font-size: 20px
+  .sendform-button
+    padding: 10px 30px
+    font-size: 14px
 @media (max-width: 576px)
   .categories__block
     grid-auto-rows: 256px
@@ -106,6 +316,61 @@
     width: 390px
     & li:last-child
       margin-top: 10px
+  .modal
+    &__form
+      margin-top: 20px
+    &__input, &__password
+      margin-top: 10px
+      // font-size: 12px
+      height: 42px
+    &__info
+      font-size: 12px
+      letter-spacing: 1px
+    &__button
+      font-size: 14px
+      padding: 0
+      height: 42px
+  .modal__form-wrapper
+    margin-top: 25px
+  #modalEmail-error, #modalPass-error
+    font-size: 12px
+    margin-top: 5px
+  .articles__title, .categories__title
+    font-size: 24px
+  .categories__title--mess
+    font-size: 18px
+  .card-top__hash
+    font-size: 20px
+  .categories-articles, .articles__box
+    grid-auto-rows: 412px
+  .card-bottom
+    height: 206px
+  .card-top
+    height: 206px
+    &__img
+      height: 206px
+  .button-up
+    height: 50px
+    width: 50px
+  .form-title
+    margin-top: 36px
+  .article
+    &__hash-name
+      font-size: 28px
+    &__img-block
+      height: 200px
+    &__title
+      font-size: 22px
+      margin-bottom: 18px
+    &__text:before
+      width: 18px
+  .right-side
+    margin-left: 5px
+  .comments
+    &__send-btn
+      font-size: 14px
+  .subscr-title
+    line-height: 24px
 @media (max-width: 480px)
   .header-mobile
     padding: 44px 0
@@ -125,6 +390,30 @@
       margin-right: 5px
       &:nth-last-child(-n+3)
         margin-top: 10px
+  .portfolio__title
+    margin-bottom: 14px
+  .socials-title, .form-title
+    font-size: 14px
+    line-height: 20px
+  .socials>i
+    font-size: 18px
+    &:not(:last-child)
+      margin-right: 15px
+  .form-title
+    margin-top: 30px
+  .footer__input, .footer__message, .footer__info, .footer__button
+    font-size: 12px
+  .footer
+    &__button
+      padding: 12px 20px
+      width: 118px
+  .subscr-input
+    padding-right: 128px
+  .subscr-btn
+    width: 118px
+    padding: 0
+  .sendform-title
+    line-height: 26px
 @media (max-width: 320px)
   .categories
     padding-top: 108px
@@ -154,3 +443,80 @@
     padding: 32px 0
   .search
     margin: 28px auto
+  .modal
+    &__form
+      margin-top: 10px
+    &__dialog
+      width: 90%
+      padding: 24px 16px
+    &__title
+      font-size: 14px
+    &__input
+      font-size: 12px
+    &__button
+      font-size: 12px
+      letter-spacing: 1px
+  .categories-articles, .articles__box
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr))
+    grid-auto-rows: 432px
+  .articles__title
+    font-size: 20px
+    margin: 21px 0 28px
+  .categories__title
+    font-size: 20px
+    &--mess
+      font-size: 18px
+  .card-top
+    height: 192px
+    &__img
+      height: 192px
+    &__hash
+      font-size: 18px
+  .card-bottom
+    padding: 20px 26px
+    height: 240px
+    &__date
+      font-size: 12px
+    &__title
+      font-size: 18px
+      margin: 15px 0px 15px
+    &__description
+      font-size: 14px
+  .group-wrapper
+    flex-direction: column
+  .article
+    &__hash-name
+      font-size: 24px
+    &__img-block
+      height: 150px
+    &__data
+      font-size: 12px
+    &__title
+      margin-bottom: 14px
+      margin-top: 18px
+    &__text
+      font-size: 14px
+      &::before
+        width: 10px
+    &__bottom
+      padding: 10px 10px
+  .comments__title
+    font-size: 18px
+    margin-bottom: 26px
+  .avatar
+    width: 30px
+    height: 30px
+  .comments-block
+    grid-template-columns: 30px 1fr
+  .user-comment, .comments__textarea
+    font-size: 14px
+  .user-name, .comment-date
+    font-size: 12px
+  .comments__send-btn
+    font-size: 14px
+    padding: 10px 15px
+  .sendform-title
+    font-size: 18px
+  .sendform-button
+    padding: 8px 18px
+    font-size: 12px

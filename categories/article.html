@@ -100,31 +100,13 @@
         </div>
 
         <div class="categories__title"></div>
-        <div class="article__content">
-          <div class="article__img-block">
-            <img class="article__img" src="../img/articles-css-backgroung.jpg">
-            <p class="article__hash-name">CSS</p>
-          </div>
-          <div class="article__bottom">
-            <span class="article__data">2023.03.12</span>
-            <h1 class="categories__title article__title">Свойство position в CSS</h1>
-            <p class="article__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, necessitatibus
-              nostrum laudantium amet, voluptate facere debitis consectetur molestias voluptatem neque maxime vel sequi
-              obcaecati quam quibusdam? Laboriosam commodi aliquid ipsum tenetur cupiditate, fugit nihil, nostrum a
-              repudiandae accusamus magni veritatis hic perferendis nemo animi rerum minus temporibus quasi minima
-              voluptatibus labore. Nostrum eligendi suscipit ut facilis unde vel iure eaque. Error eos corporis eaque
-              dolorum, modi nihil architecto tempora veniam atque qui soluta ut quasi sunt iste vitae in recusandae
-              repellat, beatae nisi reprehenderit quam. Quas ab corrupti perspiciatis ducimus quis assumenda tenetur
-              exercitationem repellat id, beatae sit nemo. Quaerat.</p>
-            <p class="article__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam officiis alias
-              magnam perferendis provident ea nostrum, beatae aspernatur doloribus possimus placeat rerum suscipit eos
-              aut ratione eveniet consequatur, sapiente aliquid ullam harum? Labore eligendi vel, sed sunt repellat,
-              accusantium debitis aliquam ratione a asperiores tempore consectetur magnam nam repudiandae! Molestias
-              adipisci assumenda possimus provident optio itaque praesentium porro blanditiis debitis rem ipsam aliquid
-              fuga molestiae ipsa quasi eaque aliquam neque voluptas, reiciendis corporis esse in dolor ea soluta.
-              Corrupti voluptatibus dolorem pariatur adipisci earum, consequatur voluptates, at vitae ipsa possimus
-              quibusdam error assumenda aspernatur! Reiciendis delectus necessitatibus iure! Dolorem, at.</p>
-          </div>
+
+        <div class="categories-articles"></div>
+
+        <ul class="articles__pagination">
+        </ul>
+
+        <div class="article-box">
         </div>
         <div class="comments">
           <h2 class="comments__title">Комментарии</h2>
@@ -170,9 +152,9 @@
           </div>
 
           <div class="comments__line"></div>
-          <form action="#" class="comments__form">
-            <textarea type="text" class="comments__textarea" placeholder="Оставить комментарий" name="comment"
-              required></textarea>
+          <form action="#" class="comments__form form">
+            <textarea id="commentArea" type="text" class="comments__textarea" placeholder="Оставить комментарий"
+              name="commentArea" required minlength="10"></textarea>
             <button class="comments__send-btn" type="submit">Отправить</button>
           </form>
         </div>
@@ -203,7 +185,8 @@
       </a>
       <h3 class="modal__title modal__title--mb-mess">Вход в аккаунт</h3>
 
-      <form action="#" method="post" class="modal__form form">
+      <form action="#" class="modal__form form">
+        <input type="text" class="input modal__input" placeholder="Имя*" name="modalName" minlength="2" required>
         <input type="email" class="input modal__input" placeholder="Email*" name="modalEmail" required>
         <input type="password" class="password modal__password" placeholder="Пароль*" name="modalPass" minlength="5"
           maxlength="20" autocomplete="on" required>

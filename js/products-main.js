@@ -1,12 +1,18 @@
 $(document).ready(function () {
   var currentPosts = [];
   const currentUrl = window.location.pathname;
+  //модальные окна
+  var modalOverlay = $(".modal__overlay");
+  var modalDialog = $(".modal__dialog");
+  const mobileMenu = document.querySelector(".header-mobile");
+  const burgerBtn = document.querySelector(".burger-btn");
+
   // const cardsBox = document.querySelector(".articles__box"); //categories-articles
   const categoriesArticles = document.querySelector(".categories-articles"); //это для вывода блока для хэшей
   const categoriesBlock = document.querySelector(".categories__block"); //это блок который всегда на этой странице
   const portfolioBlock = document.querySelector(".portfolio-block"); //это блок который всегда на странице портфолио
   const contactsBlock = document.querySelector(".contacts-block"); //это блок который всегда на странице контактов
-  const articleContent = document.querySelector(".article__content");
+  const articleContent = document.querySelector(".article-box");
   const comments = document.querySelector(".comments");
 
   //для страницы портфолио открытие по кнопке
@@ -31,12 +37,24 @@ $(document).ready(function () {
   const searchInputMob = document.querySelector(".search__input-mobile");
   const searchButtonMob = document.querySelector(".search__button-mobile");
 
+  //слушатель на родительский блок для динамических статей
+  $(categoriesArticles).on("click", ".articles__card", (e) => {
+    const index = e.currentTarget.dataset.index;
+    document.location.assign("/categories/article.html?&" + index);
+  });
+
   //слушатель на кнопку для строки поиска
   searchButton.addEventListener("click", () => {
     getData("title", searchInput.value.toLowerCase());
   });
 
   searchButtonMob.addEventListener("click", () => {
+    setTimeout(() => {
+      modalOverlay.removeClass("modal__overlay--visible");
+      modalDialog.removeClass("modal__dialog--visible");
+      mobileMenu.classList.toggle("header-menu-active");
+      burgerBtn.classList.toggle("btn-clicked");
+    }, 400);
     getData("title", searchInputMob.value.toLowerCase());
   });
 
@@ -51,8 +69,6 @@ $(document).ready(function () {
       pagination.append(listItem);
     }
   };
-
-  // const portfolioBtnText = portfolioBtn.querySelector("p");
 
   //кнопка на странице портфолио, которая разворачивает/сворачивает описание
   portfolioBtns.forEach((item, index) => {
@@ -77,7 +93,7 @@ $(document).ready(function () {
 
       const postPerPage = 6; //вывожу по 6 шт
 
-      let start = (currentPage - 1) * postPerPage; //как получить currentPage??? в эту функцию
+      let start = (currentPage - 1) * postPerPage;
       let end = start + postPerPage;
       let postPortion = currentPosts.slice(start, end);
       renderCards(postPortion);
@@ -87,6 +103,12 @@ $(document).ready(function () {
   hashListHeader.addEventListener("click", (e) => {
     let elem = e.target;
     if (elem.closest(".hash-list__item")) {
+      setTimeout(() => {
+        modalOverlay.removeClass("modal__overlay--visible");
+        modalDialog.removeClass("modal__dialog--visible");
+        mobileMenu.classList.toggle("header-menu-active");
+        burgerBtn.classList.toggle("btn-clicked");
+      }, 400);
       // categoriesBlock.style.display = "none";
       switch (true) {
         case currentUrl.includes("portfolio"):
@@ -162,9 +184,9 @@ $(document).ready(function () {
     array.forEach((item) => {
       const card = document.createElement("div");
       card.classList.add("articles__card");
-      //card.setAttribute("data-id", item.id); //записала id в атрибут
+      card.setAttribute("data-index", item.id);
       card.innerHTML = `      
-          <a href="/categories/article.html" class="toarticle"></a>
+          <a class="toarticle"></a>
           <div class="card-top">
             <img class="card-top__img" src=${item.img}>
             <p class="card-top__hash">${item.hash.join(", ")}</p>
@@ -204,7 +226,6 @@ $(document).ready(function () {
             forRender = array;
             break;
         }
-        console.log(forRender);
         //const forRender = attribute ? array.filter((item) => item.opt.includes(attribute)) : array;
 
         if (forRender.length > 0) {

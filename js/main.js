@@ -5,8 +5,67 @@ $(document).ready(function () {
   const signInBtn = document.querySelector(".signin-btn");
   const closeModalBtn = document.querySelector(".modal__close");
 
-  //для открытия модалки по кнопке подписки
-  const subscrBtn = document.querySelector(".subscr-btn");
+  //форма из модального окна
+  const modalForm = document.querySelector(".modal__form");
+  //форма "Подписаться"
+  const subscrForm = document.querySelector(".subscr-form");
+  //форма со страницы статьи
+  const commentsForm = document.querySelector(".comments__form");
+
+  //для вывода нужной статьи в article.html
+  const currentUrl = window.location.pathname;
+
+  const renderArticle = (article) => {
+    document.querySelector(".comments").style.display = "block";
+
+    const content = document.createElement("div");
+    content.classList.add("article__content");
+    content.innerHTML = `
+            <div class="article__img-block">
+              <img class="article__img" src="${article.img}">
+              <p class="article__hash-name">${article.hash.join(", ")}</p>
+            </div>
+            <div class="article__bottom">
+              <span class="article__data">${article.date}</span>
+              <h1 class="categories__title article__title">${article.title}</h1>
+              <p class="article__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, necessitatibus
+                nostrum laudantium amet, voluptate facere debitis consectetur molestias voluptatem neque maxime vel
+                sequi
+                obcaecati quam quibusdam? Laboriosam commodi aliquid ipsum tenetur cupiditate, fugit nihil, nostrum a
+                repudiandae accusamus magni veritatis hic perferendis nemo animi rerum minus temporibus quasi minima
+                voluptatibus labore. Nostrum eligendi suscipit ut facilis unde vel iure eaque. Error eos corporis eaque
+                dolorum, modi nihil architecto tempora veniam atque qui soluta ut quasi sunt iste vitae in recusandae
+                repellat, beatae nisi reprehenderit quam. Quas ab corrupti perspiciatis ducimus quis assumenda tenetur
+                exercitationem repellat id, beatae sit nemo. Quaerat.</p>
+              <p class="article__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam officiis alias
+                magnam perferendis provident ea nostrum, beatae aspernatur doloribus possimus placeat rerum suscipit eos
+                aut ratione eveniet consequatur, sapiente aliquid ullam harum? Labore eligendi vel, sed sunt repellat,
+                accusantium debitis aliquam ratione a asperiores tempore consectetur magnam nam repudiandae! Molestias
+                adipisci assumenda possimus provident optio itaque praesentium porro blanditiis debitis rem ipsam
+                aliquid
+                fuga molestiae ipsa quasi eaque aliquam neque voluptas, reiciendis corporis esse in dolor ea soluta.
+                Corrupti voluptatibus dolorem pariatur adipisci earum, consequatur voluptates, at vitae ipsa possimus
+                quibusdam error assumenda aspernatur! Reiciendis delectus necessitatibus iure! Dolorem, at.</p>
+            </div>
+        `;
+
+    document.querySelector(".article-box").append(content);
+  };
+
+  if (currentUrl.includes("article")) {
+    const index = decodeURIComponent(location.search).split("&").pop();
+
+    fetch("../db/db.json")
+      .then((res) => res.json())
+      .then((dbObj) => {
+        const article = dbObj.filter((item) => item.id === index);
+        renderArticle(article[0]);
+      });
+
+    commentsForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+    });
+  }
 
   //открытие меню с мобильного устройства
   burgerBtn.addEventListener("click", () => {
@@ -33,13 +92,20 @@ $(document).ready(function () {
   signInBtn.addEventListener("click", openModal);
   closeModalBtn.addEventListener("click", closeModal);
 
-  subscrBtn.addEventListener("click", (e) => {
-    if (document.querySelector(".subscr-input").classList.contains("valid")) {
-      openModal();
-      document.querySelector(".modal__form").style.display = "none";
-      document.querySelector(".modal__title").innerHTML = `Спасибо!<br>Подписка успешно оформлена!`;
-    }
-  });
+  //для открытия модалки по кнопке подписки
+  if (currentUrl.includes("contacts")) {
+    document.querySelector(".subscr-btn").addEventListener("click", (e) => {
+      if (document.querySelector(".subscr-input").classList.contains("valid")) {
+        openModal();
+        document.querySelector(".modal__form").style.display = "none";
+        document.querySelector(".modal__title").innerHTML = `Спасибо!<br>Подписка успешно оформлена!`;
+      }
+    });
+
+    subscrForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+    });
+  }
 
   //закрытие модального окна по esc
   document.addEventListener("keyup", function (event) {
@@ -47,6 +113,11 @@ $(document).ready(function () {
       document.querySelector(".modal__overlay").classList.remove("modal__overlay--visible");
       document.querySelector(".modal__dialog").classList.remove("modal__dialog--visible");
     }
+  });
+
+  //запрет отправки форм
+  modalForm.addEventListener("submit", (e) => {
+    e.preventDefault();
   });
 
   //валидация формы
@@ -65,18 +136,26 @@ $(document).ready(function () {
         footerMessage: {
           required: "Пожалуйста, введите текст сообщения",
         },
+        modalName: {
+          required: "Пожалуйста, укажите ваше имя",
+          minlength: "Длина имени должна быть не менее 2 символов",
+        },
         modalEmail: {
           required: "Пожалуйста, укажите email",
           email: "Ваш email должен иметь формат name@domain.com",
         },
         modalPass: {
           required: "Пожалуйста, укажите пароль",
-          minlength: "Длина пароля должена быть не менее 5 символов",
+          minlength: "Длина пароля должна быть не менее 5 символов",
           maxlength: "Длина пароля не должна превышать 20 символов",
         },
         subscrEmail: {
           required: "Пожалуйста, укажите ваш email",
           email: "Ваш email должен иметь формат name@domain.com",
+        },
+        commentArea: {
+          required: "Пожалуйста, введите текст комментария",
+          minlength: "Текст комментария должен быть не менее 10 символов",
         },
         // phone: {
         //   required: "Phone is required",
