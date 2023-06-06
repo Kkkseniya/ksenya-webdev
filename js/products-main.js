@@ -203,7 +203,7 @@ $(document).ready(function () {
   };
 
   const getData = (opt, attribute) => {
-    fetch("../db/db.json")
+    fetch("https://kkkseniya.github.io/ksenya-webdev/db/db.json")
       .then((res) => res.json())
       .then((dbObj) => {
         //сортировка статей по дате
