@@ -2,7 +2,7 @@
   {
     "id": "1",
     "type": "frontend",
-    "img": "../img/articles-bootstrap.PNG",
+    "img": "https://kkkseniya.github.io/ksenya-webdev/img/articles-bootstrap.PNG",
     "hash": ["bootstrap"],
     "date": "2023.04.21",
     "title": "Аккордеон на Bootstrap",
@@ -11,7 +11,7 @@
   {
     "id": "2",
     "type": "frontend",
-    "img": "../img/articles-css.png",
+    "img": "https://kkkseniya.github.io/ksenya-webdev/img/articles-css.png",
     "hash": ["css"],
     "date": "2023.03.12",
     "title": "Свойство position в CSS",
@@ -20,7 +20,7 @@
   {
     "id": "3",
     "type": "frontend",
-    "img": "../img/articles-css-backgroung.jpg",
+    "img": "https://kkkseniya.github.io/ksenya-webdev/img/articles-css-backgroung.jpg",
     "hash": ["css"],
     "date": "2023.04.20",
     "title": "Свойство background в CSS",
@@ -29,7 +29,7 @@
   {
     "id": "4",
     "type": "frontend",
-    "img": "../img/articles-css-underline.PNG",
+    "img": "https://kkkseniya.github.io/ksenya-webdev/img/articles-css-underline.PNG",
     "hash": ["css"],
     "date": "2023.03.10",
     "title": "Подчеркивание текста на CSS",
@@ -38,7 +38,7 @@
   {
     "id": "5",
     "type": "frontend",
-    "img": "../img/articles-frontend-parallax.PNG",
+    "img": "https://kkkseniya.github.io/ksenya-webdev/img/articles-frontend-parallax.PNG",
     "hash": ["html", "css", "javascript"],
     "date": "2023.04.15",
     "title": "Создание parallax эффекта",
@@ -47,7 +47,7 @@
   {
     "id": "6",
     "type": "frontend",
-    "img": "../img/articles-frontend-video.PNG",
+    "img": "https://kkkseniya.github.io/ksenya-webdev/img/articles-frontend-video.PNG",
     "hash": ["html", "css", "javascript"],
     "date": "2023.04.08",
     "title": "Добавление видео на сайт",
@@ -56,7 +56,7 @@
   {
     "id": "7",
     "type": "frontend",
-    "img": "../img/articles-html.jpg",
+    "img": "https://kkkseniya.github.io/ksenya-webdev/img/articles-html.jpg",
     "hash": ["html"],
     "date": "2023.03.24",
     "title": "Верстка таблиц на HTML",
@@ -65,7 +65,7 @@
   {
     "id": "8",
     "type": "frontend",
-    "img": "../img/articles-js-slider.PNG",
+    "img": "https://kkkseniya.github.io/ksenya-webdev/img/articles-js-slider.PNG",
     "hash": ["javascript"],
     "date": "2023.04.18",
     "title": "Слайдер на JavaScript",
@@ -74,7 +74,7 @@
   {
     "id": "9",
     "type": "backend",
-    "img": "../img/articles-php-dbconnection.jpg",
+    "img": "https://kkkseniya.github.io/ksenya-webdev/img/articles-php-dbconnection.jpg",
     "hash": ["php"],
     "date": "2023.04.12",
     "title": "Подключение к базе данных",
@@ -83,7 +83,7 @@
   {
     "id": "10",
     "type": "backend",
-    "img": "../img/articles-php-email.PNG",
+    "img": "https://kkkseniya.github.io/ksenya-webdev/img/articles-php-email.PNG",
     "hash": ["php"],
     "date": "2023.04.14",
     "title": "Отправка писем на PHP",
@@ -92,7 +92,7 @@
   {
     "id": "11",
     "type": "analytics",
-    "img": "../img/analytics-2.jpg",
+    "img": "https://kkkseniya.github.io/ksenya-webdev/img/analytics-2.jpg",
     "hash": ["исследование"],
     "date": "2023.04.02",
     "title": "Исследование от Хабр.Карьера",
@@ -101,7 +101,7 @@
   {
     "id": "12",
     "type": "analytics",
-    "img": "../img/analytics-1.jpg",
+    "img": "https://kkkseniya.github.io/ksenya-webdev/img/analytics-1.jpg",
     "hash": ["обзор"],
     "date": "2023.04.05",
     "title": "Обзор вакансий на HeadHunter",
@@ -110,7 +110,7 @@
   {
     "id": "13",
     "type": "interviews",
-    "img": "../img/interviews-1.PNG",
+    "img": "https://kkkseniya.github.io/ksenya-webdev/img/interviews-1.PNG",
     "hash": ["собеседование"],
     "date": "2023.03.10",
     "title": "Серии вопросов на собеседованиях",
@@ -119,7 +119,7 @@
   {
     "id": "14",
     "type": "interviews",
-    "img": "../img/interviews-2.PNG",
+    "img": "https://kkkseniya.github.io/ksenya-webdev/img/interviews-2.PNG",
     "hash": ["собеседование frontend"],
     "date": "2023.03.12",
     "title": "Собеседование на frontend-разработчика",
