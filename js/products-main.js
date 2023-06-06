@@ -40,7 +40,7 @@ $(document).ready(function () {
   //слушатель на родительский блок для динамических статей
   $(categoriesArticles).on("click", ".articles__card", (e) => {
     const index = e.currentTarget.dataset.index;
-    document.location.assign("/categories/article.html?&" + index);
+    document.location.assign("../categories/article.html?&" + index);
   });
 
   //слушатель на кнопку для строки поиска
